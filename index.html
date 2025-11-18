@@ -10,36 +10,25 @@
 </head>
   <script src="scripts.js"></script>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">LC</div>
-        <div class="brand-text">
-          <h1>Fundación Los Colores de la Vida</h1>
-          <p class="tag">Inclusión • Autonomía • Esperanza</p>
-        </div>
-      </div>
-      <nav class="main-nav" aria-label="Menú principal">
-        <a href="index.html">Inicio</a>
-        <a href="transparencia.html">Transparencia</a>
-        <a href="sobre.html">Sobre Nosotros</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="voluntarios.html">Voluntarios</a>
-        <a href="contacto.html">Contacto</a>
-        <a class="btn donate" href="contacto.html#donar">Donar</a>
-      </nav>
-      <button id="mobileBtn" class="mobile-btn" aria-expanded="false">☰</button>
-    </div>
-    <div id="mobileMenu" class="mobile-menu" hidden>
-      <a href="index.html">Inicio</a>
-      <a href="transparencia.html">Transparencia</a>
-      <a href="sobre.html">Sobre Nosotros</a>
-      <a href="proyectos.html">Proyectos</a>
-      <a href="voluntarios.html">Voluntarios</a>
-      <a href="contacto.html">Contacto</a>
-      <a class="btn donate" href="contacto.html#donar">Donar</a>
-    </div>
-  </header>
+  <header class="header">
+  <div class="logo">Los Colores de la Vida</div>
+
+  <!-- Botón hamburguesa -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menú -->
+  <nav class="nav-menu" id="navMenu">
+    <a href="index.html">Inicio</a>
+    <a href="transparencia.html">Transparencia</a>
+    <a href="sobrenosotros.html">Sobre Nosotros</a>
+    <a href="proyectos.html">Proyectos / Actividades</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
 
   <main>
     <!-- Hero -->
