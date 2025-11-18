@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto - Fundación Los Colores de la Vida</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <script src="scripts.js"></script>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <div class="logo">LC</div>
+        <div class="brand-text">
+          <h1>Fundación Los Colores de la Vida</h1>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="transparencia.html">Transparencia</a>
+        <a href="sobre.html">Sobre Nosotros</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="voluntarios.html">Voluntarios</a>
+        <a href="contacto.html" class="active">Contacto</a>
+        <a class="btn donate" href="#donar">Donar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap section">
+      <h2>Contacto y Donaciones</h2>
+      <div class="grid-2" style="margin-top:18px">
+        <div>
+          <p class="small">Si deseas colaborar, enviar documentos o pedir información, escríbenos o envíanos un mensaje por WhatsApp.</p>
+          <ul class="small">
+            <li>📧 <a href="mailto:loscoloresdelavida2021@gmail.com">loscoloresdelavida2021@gmail.com</a></li>
+            <li>📱 WhatsApp: <a href="https://wa.me/573213894520">+57 321 389 4520</a></li>
+            <li>📍 Bogotá D.C. — Usme & Ciudad Bolívar</li>
+          </ul>
+          <h4 id="donar" style="margin-top:12px">Formas de donación</h4>
+          <ul class="small">
+            <li>Nequi: <strong>3213894520</strong></li>
+            <li>Daviplata: <strong>3213894520</strong></li>
+            <li>Bancolombia: <em>(datos bancarios disponibles a solicitud)</em></li>
+          </ul>
+        </div>
+
+        <aside class="card">
+          <h4>Escríbenos</h4>
+          <form action="https://formspree.io/f/mvglgenn" method="POST" class="form-fundacion" novalidate>
+            <label for="name">Nombre completo</label>
+            <input id="name" name="name" type="text" required>
+          
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="_replyto" type="email" required>
+          
+            <label for="phone">Teléfono (opcional)</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel">
+          
+            <label for="subject">Asunto</label>
+            <input id="subject" name="subject" type="text">
+          
+            <label for="type">¿Sobre qué trata tu mensaje?</label>
+            <select id="type" name="type">
+              <option value="informacion">Solicitud de información</option>
+              <option value="donacion">Donaciones</option>
+              <option value="voluntariado">Voluntariado</option>
+              <option value="proyecto">Proyectos</option>
+              <option value="otro">Otro</option>
+            </select>
+          
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          
+            <!-- Honeypot anti-spam: mantener oculto para usuarios reales -->
+            <div style="display:none">
+              <label>Si eres humano, deja esto en blanco</label>
+              <input name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+          
+            <!-- Redirigir a página de gracias tras envío -->
+            <input type="hidden" name="_redirect" value="https://loscoloresdelavida.org/gracias.html">
+          
+            <!-- Opcional: configurar asunto del correo que recibirás -->
+            <input type="hidden" name="_subject" value="Formulario web - Fundación Los Colores de la Vida">
+          
+            <button type="submit" class="btn primary">Enviar</button>
+          </form>
+          
+          <p style="margin-top:12px" class="small">Donar por WhatsApp:</p>
+          <a class="btn donate" href="https://wa.me/573213894520">Donar por WhatsApp</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Fundación Los Colores de la Vida</h4>
+        <p class="small">© <span id="year6"></span> Fundación Los Colores de la Vida</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="transparencia.html">Transparencia</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="voluntarios.html">Voluntarios</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+<script>document.getElementById('year6').textContent=new Date().getFullYear();</script>
+<script src="scripts.js"></script>
+</body>
+</html>

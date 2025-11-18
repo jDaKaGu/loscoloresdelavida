@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Accesibilidad - Fundación Los Colores de la Vida</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">LC</div>
+      <div class="brand-text"><h1>Fundación Los Colores de la Vida</h1></div>
+    </div>
+    <nav class="main-nav" aria-label="Menú principal">
+      <a href="index.html">Inicio</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="sobre.html">Sobre Nosotros</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="voluntarios.html">Voluntarios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap section">
+<h2>Declaración de Accesibilidad</h2>
+<p>Última actualización: noviembre de 2025</p>
+<p>En la Fundación Los Colores de la Vida trabajamos para que nuestro sitio web (www.loscoloresdelavida.org) sea accesible para todas las personas, incluidas aquellas con discapacidad. Nos comprometemos a seguir las Pautas de Accesibilidad al Contenido Web (WCAG 2.1, nivel AA) y a mejorar continuamente la experiencia de navegación.</p>
+<h3>Medidas implementadas</h3>
+<ul class="small">
+<li>Textos alternativos en las imágenes.</li>
+<li>Contrastes adecuados entre texto y fondo.</li>
+<li>Estructura clara de encabezados y menús.</li>
+<li>Compatibilidad con lectores de pantalla y navegación por teclado.</li>
+<li>Reducción de movimientos innecesarios y animaciones suaves.</li>
+</ul>
+<p>Si detectas una barrera de accesibilidad, por favor contáctanos:</p>
+<ul class="small">
+<li>Correo: <a href="mailto:loscoloresdelavida2021@gmail.com">loscoloresdelavida2021@gmail.com</a></li>
+<li>WhatsApp: <a href="https://wa.me/573213894520">+57 321 389 4520</a></li>
+</ul>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div><p class="small">© <span id="yearA"></span> Fundación Los Colores de la Vida</p></div>
+    <div></div>
+  </div>
+</footer>
+<script>document.getElementById('yearA').textContent=new Date().getFullYear();</script>
+<script src="scripts.js"></script>
+</body>
+</html>

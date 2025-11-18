@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gracias por tu mensaje</title>
+    <script src="scripts.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #FF6FD8,
+                #6FB1FC,
+                #FFD66F,
+                #76E5B1
+            );
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #222;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: #ffffffee;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.9s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        a.button:hover {
+            background: #000;
+            transform: translateY(-3px);
+        }
+
+        .emoji {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="emoji">💛</div>
+        <h1>¡Gracias por contactarnos!</h1>
+        <p>
+            Hemos recibido tu mensaje correctamente.  
+            Muy pronto alguien del equipo de <strong>Fundación Los Colores de la Vida</strong> se comunicará contigo.
+        </p>
+
+        <a href="/" class="button">Volver al inicio</a>
+    </div>
+</body>
+</html>
