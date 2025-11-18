@@ -4,57 +4,172 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fundación - Sitio Profesional</title>
+
+  <!-- Fuente suave y moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    body { margin:0; font-family: 'Inter', sans-serif; background:#fafafa; font-size:18px; line-height:1.6; }
+    :root {
+      --grad-1: #ff9a3c;
+      --grad-2: #ff6f61;
+      --grad-3: #ffcb47;
+      --shadow-1: 0 8px 26px rgba(0,0,0,0.12);
+      --shadow-2: 0 4px 14px rgba(0,0,0,0.18);
+    }
+
+    body { 
+      margin:0; 
+      font-family: 'Inter', sans-serif; 
+      background: #fff6ef; 
+      font-size:20px; 
+      line-height:1.7; 
+      color:#333;
+    }
+
+    /* ---------------------- HEADER EXTRA COLORIDO ---------------------- */
     header {
-      background: linear-gradient(90deg, #ffcc99, #ffa45c);
+      background: linear-gradient(120deg, var(--grad-1), var(--grad-3));
       padding: 26px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      box-shadow:0 4px 14px rgba(0,0,0,0.12);
+      box-shadow: var(--shadow-1);
+      position: relative;
+      z-index:10;
     }
-    header h1 { margin:0; font-size: 26px; color:#fff; }
+
+    header h1 { 
+      margin:0; 
+      font-size: 34px; 
+      font-weight:800; 
+      color:#fff; 
+    }
+
+    /* ---------------------- HAMBURGER MODERNO ---------------------- */
     .hamburger {
-      width:30px; cursor:pointer; display:flex; flex-direction:column; gap:6px;
+      width:34px; cursor:pointer; display:flex; flex-direction:column; gap:7px;
     }
     .hamburger span {
       height:4px; width:100%; background:#fff; border-radius:3px;
+      transition:0.3s ease;
     }
-    nav { display:none; background:#ffbe85; padding:15px; }
-    nav a {
-      display:block; padding:10px 0; color:#333; text-decoration:none; font-weight:bold;
+
+    /* ---------------------- MENÚ DESLIZANTE (LEFT SLIDE) ---------------------- */
+    #menu {
+      position: fixed;
+      left:-290px;
+      top:0;
+      width:290px;
+      height:100vh;
+      background:rgba(255,255,255,0.25);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-2);
+      padding:40px 25px;
+      transition:0.35s ease;
+      z-index:9;
+      display:flex;
+      flex-direction:column;
     }
+
+    #menu.open {
+      left:0;
+    }
+
+    #menu a {
+      display:block;
+      padding:14px 0;
+      color:#333;
+      text-decoration:none;
+      font-size:20px;
+      font-weight:600;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+
+    #menu a:hover {
+      color:#ff7b00;
+      transform:translateX(6px);
+      transition:0.2s;
+    }
+
+    /* ---------------------- HERO ---------------------- */
     .hero {
-      width:100%; height:350px;
-      background:url('https://placehold.co/1200x400') center/cover no-repeat;
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; font-size:32px; font-weight:bold;
+      width:100%; 
+      height:420px;
+      background:url("https://drive.google.com/uc?export=view&id=18mQGb6KyDXjN0cYKX6_cvsGQCLdafsDG") center/cover no-repeat;
+      display:flex; 
+      align-items:center; 
+      justify-content:center;
+      color:#fff; 
+      font-size:42px; 
+      font-weight:800;
+      text-shadow:0 4px 10px rgba(0,0,0,0.4);
+      border-bottom-left-radius:30px;
+      border-bottom-right-radius:30px;
+      box-shadow: var(--shadow-1);
     }
+
+    /* ---------------------- TARJETAS MODERNAS ---------------------- */
     .cards {
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-      gap:20px; padding:40px;
+      display:grid; 
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:28px; 
+      padding:50px 30px;
     }
+
     .card {
-      background:#fff; border-radius:16px; padding:20px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.1);
-      transition:transform 0.3s ease;
+      background:#fff; 
+      border-radius:22px; 
+      padding:0 0 25px;
+      box-shadow: var(--shadow-1);
+      transition:0.3s ease;
+      overflow:hidden;
     }
-    .card:hover { transform:translateY(-6px); }
-    .card img { width:100%; border-radius:12px; }
+
+    .card:hover { 
+      transform:translateY(-10px) scale(1.02); 
+      box-shadow: var(--shadow-2);
+    }
+
+    .card img { width:100%; border-bottom:4px solid var(--grad-1); }
+
+    .card h3 { font-size:24px; margin:18px; }
+    .card p { margin:0 18px; font-size:18px; color:#555; }
+
+    /* ---------------------- PANEL DE TRANSPARENCIA PREMIUM ---------------------- */
     .transparency {
-      padding:40px; background:#fff2e0; margin:40px 0;
-      border-left:6px solid #ff8b2e; font-size:18px;
+      padding:50px 30px; 
+      margin:40px 0;
+      background: linear-gradient(120deg, #fff3d6, #ffe7c2);
+      border-left:8px solid var(--grad-1);
+      border-radius:14px;
+      box-shadow: var(--shadow-1);
     }
+
+    .transparency h2 {
+      font-size:30px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    /* ---------------------- FOOTER INSTITUCIONAL PREMIUM ---------------------- */
     footer {
-      background:#222; color:#ccc; padding:40px; text-align:center;
-      font-size:14px;
+      background:#222; 
+      color:#ddd; 
+      padding:50px; 
+      text-align:center;
+      font-size:16px;
+      border-top-left-radius:24px;
+      border-top-right-radius:24px;
+      box-shadow:0 -6px 20px rgba(0,0,0,0.35);
+      margin-top:50px;
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <h1 style="font-size:32px; font-weight:800; letter-spacing:0.5px;">Fundación Ejemplo</h1>
+    <h1>Fundación Ejemplo</h1>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -67,7 +182,7 @@
     <a href="#">Contacto</a>
   </nav>
 
-  <section class="hero">Imagen Principal</section>
+  <section class="hero">Fundación Ejemplo</section>
 
   <section class="cards">
     <div class="card">
@@ -89,7 +204,7 @@
 
   <section class="transparency">
     <h2>Panel de Transparencia</h2>
-    <p>Aquí se mostrarán los informes, documentos y datos contables con un estilo institucional y moderno.</p>
+    <p>Aquí se mostrarán los informes, documentos y datos contables con un estilo institucional moderno y detallado.</p>
   </section>
 
   <footer>
@@ -100,8 +215,9 @@
   <script>
     function toggleMenu(){
       const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      menu.classList.toggle('open');
     }
   </script>
+
 </body>
 </html>
