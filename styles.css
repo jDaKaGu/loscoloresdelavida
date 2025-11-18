@@ -217,3 +217,35 @@ footer {
   border-radius: 4px;
   margin: 40px 0;
 }
+
+/* HERO DIVIDIDO MITAD Y MITAD */
+.hero {
+  width:100%;
+  height:380px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  overflow:hidden;
+}
+
+.hero-left {
+  background:url('https://drive.google.com/uc?export=view&id=18mQGb6KyDXjN0cYKX6_cvsGQCLdafsDG')
+    center/cover no-repeat;
+  filter: brightness(0.9);
+}
+
+.hero-right {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+  background: linear-gradient(135deg, #ffcc99, #ff9b42, #ff7a23);
+  color:#fff;
+  text-align:center;
+}
+
+.hero-right h2 {
+  font-size:42px;
+  font-weight:800;
+  line-height:1.2;
+  text-shadow:0 4px 14px rgba(0,0,0,0.25);
+}
