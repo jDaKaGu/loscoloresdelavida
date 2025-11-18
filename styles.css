@@ -1,158 +1,98 @@
-/* ===== RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
 
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background: #f0faf8;
-    color: #222;
-    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #faf9f6;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* ===== COLORES PRINCIPALES ===== */
-:root {
-    --primary: #00b59c;
-    --primary-dark: #008d79;
-    --accent: #00d4b2;
-    --text-dark: #1d1d1d;
-}
+/* ===========================
+   ENCABEZADO
+=========================== */
 
-/* ===== HEADER ===== */
 header {
-    background: var(--primary);
-    padding: 25px 0;
+    background: #ffb36b; /* NARANJA CLARO MODERNO */
+    color: #fff;
+    padding: 25px 10px;
     text-align: center;
-    color: white;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    border-bottom: 4px solid #ffa654;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
 header h1 {
-    font-size: 36px;
+    margin: 0;
+    font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
-/* ===== CONTENEDOR ===== */
+/* ===========================
+   CONTENEDOR
+=========================== */
+
 .container {
-    width: 90%;
     max-width: 900px;
-    margin: 50px auto;
-    background: #ffffff;
-    padding: 40px 45px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border-top: 6px solid var(--primary);
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* ===== TITULOS ===== */
-h2, h3 {
-    color: var(--primary);
-    margin-bottom: 20px;
-    font-weight: 700;
+/* ===========================
+   SEPARADORES ENTRE PÁRRAFOS
+=========================== */
+
+p {
+    margin: 22px 0;
+    position: relative;
 }
 
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 26px;
-}
-
-/* ===== FORMULARIOS ===== */
-form label {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 10px;
+/* línea decorativa suave bajo párrafos importantes */
+p:not(:last-of-type)::after {
+    content: "";
     display: block;
+    width: 60px;
+    height: 4px;
+    margin: 14px auto 0;
+    background: linear-gradient(90deg, #ffb36b, #ff8748);
+    border-radius: 2px;
+    opacity: 0.7;
 }
 
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    border: 2px solid #cbdad7;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    transition: border 0.2s;
-}
+/* ===========================
+   BOTONES Y ENLACES
+=========================== */
 
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: var(--primary);
-    outline: none;
-}
-
-/* ===== BOTÓN ===== */
-button {
-    background: var(--primary);
-    color: white;
-    padding: 14px 24px;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(0,181,156,0.25);
-}
-
-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,181,156,0.35);
-}
-
-/* ===== LINKS ===== */
-a {
-    color: var(--primary-dark);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ===== SUCCESS PAGE ===== */
-.success-container {
-    text-align: center;
-    padding: 60px 40px;
-}
-
-.success-container h2 {
-    font-size: 38px;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.success-container p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: var(--text-dark);
-}
-
-.success-container a {
-    padding: 14px 22px;
-    background: var(--primary);
-    color: white;
+button, .btn {
     display: inline-block;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(0,181,156,0.25);
+    padding: 12px 18px;
+    background: #ff8748;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease;
 }
 
-.success-container a:hover {
-    background: var(--primary-dark);
+button:hover, .btn:hover {
+    background: #ff6b2c;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,181,156,0.35);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f3f3f3;
+    color: #777;
+    margin-top: 40px;
+    font-size: 0.95rem;
+    border-top: 2px solid #eee;
 }
