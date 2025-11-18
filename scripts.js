@@ -1,15 +1,19 @@
-// ====== MENU RESPONSIVE ======
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.querySelector(".menu-btn");
-  const navMenu = document.querySelector(".nav-links");
+const hamburger = document.getElementById("hamburgerBtn");
+const navMenu = document.getElementById("navMenu");
 
-  if (menuBtn && navMenu) {
-    menuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      menuBtn.classList.toggle("open");
-    });
-  }
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("open");
 });
+
+// Cerrar el menú al hacer clic en un enlace
+document.querySelectorAll(".nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("open");
+  });
+});
+
 
 // ====== SMOOTH SCROLL SUAVE ======
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
