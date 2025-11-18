@@ -1,142 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fundación Los Colores de la Vida</title>
-  <meta name="description" content="Fundación Los Colores de la Vida - transparencia, proyectos, voluntariado y donaciones en Usme y Ciudad Bolívar." />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundación - Sitio Profesional</title>
+  <style>
+    body { margin:0; font-family: 'Inter', sans-serif; background:#fafafa; font-size:18px; line-height:1.6; }
+    header {
+      background: linear-gradient(90deg, #ffcc99, #ffa45c);
+      padding: 26px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    }
+    header h1 { margin:0; font-size: 26px; color:#fff; }
+    .hamburger {
+      width:30px; cursor:pointer; display:flex; flex-direction:column; gap:6px;
+    }
+    .hamburger span {
+      height:4px; width:100%; background:#fff; border-radius:3px;
+    }
+    nav { display:none; background:#ffbe85; padding:15px; }
+    nav a {
+      display:block; padding:10px 0; color:#333; text-decoration:none; font-weight:bold;
+    }
+    .hero {
+      width:100%; height:350px;
+      background:url('https://placehold.co/1200x400') center/cover no-repeat;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff; font-size:32px; font-weight:bold;
+    }
+    .cards {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:20px; padding:40px;
+    }
+    .card {
+      background:#fff; border-radius:16px; padding:20px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.1);
+      transition:transform 0.3s ease;
+    }
+    .card:hover { transform:translateY(-6px); }
+    .card img { width:100%; border-radius:12px; }
+    .transparency {
+      padding:40px; background:#fff2e0; margin:40px 0;
+      border-left:6px solid #ff8b2e; font-size:18px;
+    }
+    footer {
+      background:#222; color:#ccc; padding:40px; text-align:center;
+      font-size:14px;
+    }
+  </style>
 </head>
-  <script src="scripts.js"></script>
 <body>
-  <header class="header">
-  <div class="logo">Los Colores de la Vida</div>
-
-  <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav class="nav-menu" id="navMenu">
-    <a href="index.html">Inicio</a>
-    <a href="transparencia.html">Transparencia</a>
-    <a href="sobrenosotros.html">Sobre Nosotros</a>
-    <a href="proyectos.html">Proyectos / Actividades</a>
-    <a href="contacto.html">Contacto</a>
-
-    <div class="donar-box">
-      <a href="donaciones.html" class="btn-donar">Donar Ahora</a>
+  <header>
+    <h1 style="font-size:32px; font-weight:800; letter-spacing:0.5px;">Fundación Ejemplo</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
+  </header>
+
+  <nav id="menu">
+    <a href="#">Inicio</a>
+    <a href="#">Proyectos</a>
+    <a href="#">Transparencia</a>
+    <a href="#">Contacto</a>
   </nav>
-</header>
 
+  <section class="hero">Imagen Principal</section>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="kicker">Fundación</span>
-          <h2>Tejiendo oportunidades para familias en Usme y Ciudad Bolívar</h2>
-          <p>Apoyamos a madres cabeza de familia, comunidades afro, población LGTBIQ+, niños y adultos mayores mediante talleres, ayudas técnicas y generación de ingresos.</p>
-          <div class="hero-ctas">
-            <a class="btn primary" href="contacto.html#donar">Dona ahora</a>
-            <a class="btn outline" href="voluntarios.html">Hazte voluntario</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <div class="hero-card" role="img" aria-label="Imagen representativa">
-            <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1520975912938-7b3f4b7b9b63?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=example');"></div>
-            <div class="hero-text">
-              <h3>Desde la comunidad</h3>
-              <p>Nuestro apoyo nace de las mismas comunidades: acompañamiento real, empoderamiento y oportunidades sostenibles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Intro -->
-    <section class="wrap intro">
-      <div class="grid-3">
-        <article class="card">
-          <h4>Qué hacemos</h4>
-          <p>Formación, ayudas técnicas, generación de ingresos mediante manualidades y trabajo comunitario.</p>
-        </article>
-        <article class="card">
-          <h4>Transparencia</h4>
-          <p>Publicamos documentos legales e informes para garantizar el uso responsable de recursos.</p>
-        </article>
-        <article class="card">
-          <h4>Colabora</h4>
-          <p>Recibimos donaciones, voluntarios y alianzas con marcas locales.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Projects preview -->
-    <section class="wrap section" id="proyectos-preview">
-      <h3>Proyectos destacados</h3>
-      <div class="grid-3">
-        <div class="card">
-          <h4>Curso en alianza con el SENA (Próximamente)</h4>
-          <p>Programa formativo dirigido a madres cabeza de familia, jóvenes y adultos para fortalecer habilidades laborales y de emprendimiento.</p>
-        </div>
-        <div class="card">
-          <h4>Entrega de regalos (Ciudad Bolívar)</h4>
-          <p>Jornada solidaria en colaboración con la Alcaldía Local de Ciudad Bolívar para niños en situación de vulnerabilidad.</p>
-        </div>
-        <div class="card">
-          <h4>Salida recreativa a Mundo Aventura</h4>
-          <p>Actividad realizada con 100 beneficiarios para fomentar la convivencia, el bienestar y la inclusión social.</p>
-        </div>
-      </div>
-      <p style="text-align:center;margin-top:14px"><a class="btn outline" href="proyectos.html">Ver todos los proyectos</a></p>
-    </section>
-
-    <!-- Sponsors -->
-    <section class="wrap section sponsors-section">
-      <h3>Nuestros aliados</h3>
-      <div class="sponsors" aria-label="Logos de patrocinadores">
-        <img src="https://via.placeholder.com/140x48?text=Marca+1" alt="Patrocinador 1">
-        <img src="https://via.placeholder.com/140x48?text=Marca+2" alt="Patrocinador 2">
-        <img src="https://via.placeholder.com/140x48?text=Marca+3" alt="Patrocinador 3">
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="wrap section" id="faq">
-      <h3>Preguntas frecuentes</h3>
-      <div class="grid-3">
-        <div class="card"><h4>¿Cómo donar?</h4><p>Puedes donar vía Nequi o Daviplata al número <strong>3213894520</strong>, o mediante transferencia a Bancolombia (ver datos en la sección de Contacto).</p></div>
-        <div class="card"><h4>¿Cómo ser voluntario?</h4><p>Escribe a <a href="mailto:loscoloresdelavida2021@gmail.com">loscoloresdelavida2021@gmail.com</a> o completa el formulario de voluntariado.</p></div>
-        <div class="card"><h4>¿Dónde operan?</h4><p>Nuestras actividades se desarrollan en Usme y Ciudad Bolívar, Bogotá D.C.</p></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <h4>Fundación Los Colores de la Vida</h4>
-        <p>Promoviendo la autonomía y el bienestar de familias en Usme y Ciudad Bolívar.</p>
-        <p class="small">© <span id="year"></span> Fundación Los Colores de la Vida</p>
-      </div>
-      <div>
-        <h4>Enlaces</h4>
-        <ul>
-          <li><a href="transparencia.html">Transparencia</a></li>
-          <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="voluntarios.html">Voluntarios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="accessibility.html">Accesibilidad</a></li>
-        </ul>
-      </div>
+  <section class="cards">
+    <div class="card">
+      <img src="https://placehold.co/600x400" />
+      <h3>Proyecto 1</h3>
+      <p>Descripción breve del proyecto.</p>
     </div>
+    <div class="card">
+      <img src="https://placehold.co/600x400" />
+      <h3>Proyecto 2</h3>
+      <p>Descripción breve del proyecto.</p>
+    </div>
+    <div class="card">
+      <img src="https://placehold.co/600x400" />
+      <h3>Proyecto 3</h3>
+      <p>Descripción breve del proyecto.</p>
+    </div>
+  </section>
+
+  <section class="transparency">
+    <h2>Panel de Transparencia</h2>
+    <p>Aquí se mostrarán los informes, documentos y datos contables con un estilo institucional y moderno.</p>
+  </section>
+
+  <footer>
+    © 2025 Fundación Ejemplo — Todos los derechos reservados<br>
+    Información legal | Política de datos | Contacto institucional
   </footer>
 
-<script src="scripts.js"></script>
+  <script>
+    function toggleMenu(){
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
