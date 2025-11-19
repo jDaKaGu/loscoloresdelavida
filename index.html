@@ -1,229 +1,58 @@
-<!DOCTYPE html>
+<!--
+Project: Fundación Los Colores de la Vida — Rediseño Total (Minimalista & Elegante)
+Files included inside this single document (copy each into separate files):
+- index.html (path in your session: /mnt/data/index.html)
+- styles.css (path in your session: /mnt/data/styles.css)
+- scripts.js (new optimized JS, includes and improves your original script)
+
+
+Instrucciones: copia cada sección marcada entre '==== filename ====' en un archivo con el mismo nombre
+(asegúrate que todos estén en la misma carpeta en tu proyecto de Cloudflare Pages).
+-->
+
+
+==== index.html ====
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fundación - Sitio Profesional</title>
-
-  <!-- Fuente suave y moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --grad-1: #ff9a3c;
-      --grad-2: #ff6f61;
-      --grad-3: #ffcb47;
-      --shadow-1: 0 8px 26px rgba(0,0,0,0.12);
-      --shadow-2: 0 4px 14px rgba(0,0,0,0.18);
-    }
-
-    body { 
-      margin:0; 
-      font-family: 'Inter', sans-serif; 
-      background: #fff6ef; 
-      font-size:20px; 
-      line-height:1.7; 
-      color:#333;
-    }
-
-    /* ---------------------- HEADER EXTRA COLORIDO ---------------------- */
-    header {
-      background: linear-gradient(120deg, var(--grad-1), var(--grad-3));
-      padding: 26px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      box-shadow: var(--shadow-1);
-      position: relative;
-      z-index:10;
-    }
-
-    header h1 { 
-      margin:0; 
-      font-size: 34px; 
-      font-weight:800; 
-      color:#fff; 
-    }
-
-    /* ---------------------- HAMBURGER MODERNO ---------------------- */
-    .hamburger {
-      width:34px; cursor:pointer; display:flex; flex-direction:column; gap:7px;
-    }
-    .hamburger span {
-      height:4px; width:100%; background:#fff; border-radius:3px;
-      transition:0.3s ease;
-    }
-
-    /* ---------------------- MENÚ DESLIZANTE (LEFT SLIDE) ---------------------- */
-    #menu {
-      position: fixed;
-      left:-290px;
-      top:0;
-      width:290px;
-      height:100vh;
-      background:rgba(255,255,255,0.25);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow-2);
-      padding:40px 25px;
-      transition:0.35s ease;
-      z-index:9;
-      display:flex;
-      flex-direction:column;
-    }
-
-    #menu.open {
-      left:0;
-    }
-
-    #menu a {
-      display:block;
-      padding:14px 0;
-      color:#333;
-      text-decoration:none;
-      font-size:20px;
-      font-weight:600;
-      border-bottom:1px solid rgba(0,0,0,0.08);
-    }
-
-    #menu a:hover {
-      color:#ff7b00;
-      transform:translateX(6px);
-      transition:0.2s;
-    }
-
-    /* ---------------------- HERO ---------------------- */
-    .hero {
-      width:100%; 
-      height:420px;
-      background:url("./assets/img/hero-principal.jpg") center/cover no-repeat;
-      display:flex; 
-      align-items:center; 
-      justify-content:center;
-      color:#fff; 
-      font-size:42px; 
-      font-weight:800;
-      text-shadow:0 4px 10px rgba(0,0,0,0.4);
-      border-bottom-left-radius:30px;
-      border-bottom-right-radius:30px;
-      box-shadow: var(--shadow-1);
-    }
-
-    /* ---------------------- TARJETAS MODERNAS ---------------------- */
-    .cards {
-      display:grid; 
-      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-      gap:28px; 
-      padding:50px 30px;
-    }
-
-    .card {
-      background:#fff; 
-      border-radius:22px; 
-      padding:0 0 25px;
-      box-shadow: var(--shadow-1);
-      transition:0.3s ease;
-      overflow:hidden;
-    }
-
-    .card:hover { 
-      transform:translateY(-10px) scale(1.02); 
-      box-shadow: var(--shadow-2);
-    }
-
-    .card img { width:100%; border-bottom:4px solid var(--grad-1); }
-
-    .card h3 { font-size:24px; margin:18px; }
-    .card p { margin:0 18px; font-size:18px; color:#555; }
-
-    /* ---------------------- PANEL DE TRANSPARENCIA PREMIUM ---------------------- */
-    .transparency {
-      padding:50px 30px; 
-      margin:40px 0;
-      background: linear-gradient(120deg, #fff3d6, #ffe7c2);
-      border-left:8px solid var(--grad-1);
-      border-radius:14px;
-      box-shadow: var(--shadow-1);
-    }
-
-    .transparency h2 {
-      font-size:30px;
-      font-weight:800;
-      margin-bottom:12px;
-    }
-
-    /* ---------------------- FOOTER INSTITUCIONAL PREMIUM ---------------------- */
-    footer {
-      background:#222; 
-      color:#ddd; 
-      padding:50px; 
-      text-align:center;
-      font-size:16px;
-      border-top-left-radius:24px;
-      border-top-right-radius:24px;
-      box-shadow:0 -6px 20px rgba(0,0,0,0.35);
-      margin-top:50px;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fundación Los Colores de la Vida</title>
+<meta name="description" content="Fundación Los Colores de la Vida - transparencia, proyectos, voluntariado y donaciones en Usme y Ciudad Bolívar." />
+<link rel="icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <header>
-    <h1>Fundación Ejemplo</h1>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-  </header>
-
-  <nav id="menu">
-    <a href="#">Inicio</a>
-    <a href="#">Proyectos</a>
-    <a href="#">Transparencia</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-<section class="hero">
-  <div class="hero-left"></div>
-  <div class="hero-right">
-    <h2>Mira la vida de una forma diferente</h2>
-  </div>
-</section>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="Fundación Los Colores de la Vida">
+<div class="logo">LC</div>
+<div class="brand-text">
+<span class="sr-only">Fundación</span>
+<h1>Los Colores de la Vida</h1>
+</div>
+</a>
 
 
-  <section class="cards">
-    <div class="card">
-      <img src="https://placehold.co/600x400" />
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto.</p>
-    </div>
-    <div class="card">
-      <img src="https://placehold.co/600x400" />
-      <h3>Proyecto 2</h3>
-      <p>Descripción breve del proyecto.</p>
-    </div>
-    <div class="card">
-      <img src="https://placehold.co/600x400" />
-      <h3>Proyecto 3</h3>
-      <p>Descripción breve del proyecto.</p>
-    </div>
-  </section>
+<button class="menu-btn" aria-expanded="false" aria-controls="primary-navigation">
+<span class="hamburger" aria-hidden="true"></span>
+<span class="sr-only">Abrir menú</span>
+</button>
 
-  <section class="transparency">
-    <h2>Panel de Transparencia</h2>
-    <p>Aquí se mostrarán los informes, documentos y datos contables con un estilo institucional moderno y detallado.</p>
-  </section>
 
-  <footer>
-    © 2025 Fundación Ejemplo — Todos los derechos reservados<br>
-    Información legal | Política de datos | Contacto institucional
-  </footer>
-
-  <script>
-    function toggleMenu(){
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('open');
-    }
-  </script>
-
-</body>
+<nav id="primary-navigation" class="nav-links" aria-label="Menú principal">
+<a href="index.html">Inicio</a>
+<a href="transparencia.html">Transparencia</a>
+<a href="sobre.html">Sobre nosotros</a>
+<a href="proyectos.html">Proyectos</a>
+<a href="voluntarios.html">Voluntarios</a>
+<a href="contacto.html">Contacto</a>
+<a class="btn donate" href="contacto.html#donar">Donar</a>
+</nav>
+</div>
+</header>
 </html>
