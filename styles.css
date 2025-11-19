@@ -1,251 +1,49 @@
-/* ===========================
-   ESTILOS GENERALES
-=========================== */
-
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: #f9fafb;
-  color: #222;
-}
-
-/* ===========================
-   ENCABEZADO
-=========================== */
-
-/* HEADER */
-.header {
-  background: linear-gradient(90deg, #ffb774, #ff985f);
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+/* Minimalista, elegante y accesible */
+:root{
+--bg:#fbfdfc;
+--card:#ffffff;
+--text:#0b1020;
+--muted:#5b6770;
+--primary:#076b5a; /* verde profundo */
+--accent:#00b59c;
+--radius:12px;
+--max-width:1100px;
 }
 
 
-/* ===========================
-   CONTENEDOR
-=========================== */
-
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+margin:0;
+font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+background:var(--bg);
+color:var(--text);
+-webkit-font-smoothing:antialiased;
 }
+.wrap{width:90%;max-width:var(--max-width);margin:0 auto;padding:36px 0}
 
-/* ===========================
-   SEPARADORES ENTRE PÁRRAFOS
-=========================== */
 
-p {
-    margin: 22px 0;
-    position: relative;
-}
+/* Skip link */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#111;color:#fff;border-radius:6px}
 
-/* línea decorativa suave bajo párrafos importantes */
-p:not(:last-of-type)::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    margin: 14px auto 0;
-    background: linear-gradient(90deg, #ffb36b, #ff8748);
-    border-radius: 2px;
-    opacity: 0.7;
-}
 
-/* ===========================
-   BOTONES Y ENLACES
-=========================== */
+/* Header */
+.site-header{background:transparent;padding:18px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.brand-text h1{font-size:18px;margin:0;font-weight:700}
 
-button, .btn {
-    display: inline-block;
-    padding: 12px 18px;
-    background: #ff8748;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.15s ease, background 0.2s ease;
-}
 
-button:hover, .btn:hover {
-    background: #ff6b2c;
-    transform: translateY(-2px);
-}
+/* Nav */
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links a{padding:8px 10px;border-radius:8px;font-weight:600;color:var(--muted);text-decoration:none}
+.nav-links a:hover{color:var(--text);background:rgba(6,107,90,0.06)}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+.btn.primary{background:var(--primary);color:white}
+.btn.outline{border:2px solid rgba(6,107,90,0.08);color:var(--primary)}
+.btn.donate{background:var(--accent);color:white}
 
-/* ===========================
-   FOOTER
-=========================== */
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #f3f3f3;
-    color: #777;
-    margin-top: 40px;
-    font-size: 0.95rem;
-    border-top: 2px solid #eee;
-}
-
-/* ENCABEZADO */
-.header {
-  background-color: #ffb774; /* naranja claro elegante */
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.5px;
-}
-
-/* HAMBURGER */
-.hamburger {
-  width: 35px;
-  height: 28px;
-  border: none;
-  background: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.hamburger span {
-  height: 4px;
-  background: white;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-/* ANIMACIÓN */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(12px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-12px) rotate(-45deg);
-}
-
-/* MENÚ LATERAL GLASS UI */
-.nav-menu {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 270px;
-  height: 100vh;
-  backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.7);
-  border-left: 1px solid rgba(255,255,255,0.4);
-  box-shadow: -5px 0 20px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  padding-top: 100px;
-  transition: right 0.35s ease;
-}
-
-.nav-menu a {
-  padding: 20px 30px;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #333;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-}
-
-.nav-menu a:hover {
-  background: rgba(255,155,85,0.2);
-}
-
-/* MENÚ VISIBLE */
-.nav-menu.open {
-  right: 0;
-}
-
-/* TIPOGRAFÍA PROFESIONAL */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-
-/* BOTÓN DONAR */
-.btn-donar {
-  display: block;
-  margin: 25px 30px;
-  padding: 12px;
-  background: #ff6d3b;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-donar:hover {
-  background: #ff5722;
-  transform: translateY(-2px);
-}
-
-/* MENÚ ABIERTO */
-.nav-menu.open {
-  right: 0;
-}
-
-/* SEPARADORES PROFESIONALES */
-.section-divider {
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right, #ff985f, #ffb774);
-  border-radius: 4px;
-  margin: 40px 0;
-}
-
-/* HERO DIVIDIDO MITAD Y MITAD */
-.hero {
-  width:100%;
-  height:380px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  overflow:hidden;
-}
-
-.hero-left {
-  background:url('https://drive.google.com/uc?export=view&id=18mQGb6KyDXjN0cYKX6_cvsGQCLdafsDG')
-    center/cover no-repeat;
-  filter: brightness(0.9);
-}
-
-.hero-right {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-  background: linear-gradient(135deg, #ffcc99, #ff9b42, #ff7a23);
-  color:#fff;
-  text-align:center;
-}
-
-.hero-right h2 {
-  font-size:42px;
-  font-weight:800;
-  line-height:1.2;
-  text-shadow:0 4px 14px rgba(0,0,0,0.25);
-}
+.hero, .card, .hero-copy{opacity:0;transform:translateY(10px)}
