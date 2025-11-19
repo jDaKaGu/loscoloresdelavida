@@ -1,43 +1,169 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Fundación Los Colores de la Vida</title>
-<meta name="description" content="Fundación Los Colores de la Vida - transparencia, proyectos, voluntariado y donaciones en Usme y Ciudad Bolívar." />
-<link rel="icon" href="/favicon.ico" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fundación Los Colores de la Vida</title>
+  <meta name="description" content="Fundación Los Colores de la Vida - transparencia, proyectos, voluntariado y donaciones en Usme y Ciudad Bolívar." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<a class="skip-link" href="#main">Saltar al contenido</a>
-<header class="site-header">
-<div class="wrap header-inner">
-<a class="brand" href="index.html" aria-label="Fundación Los Colores de la Vida">
-<div class="logo">LC</div>
-<div class="brand-text">
-<span class="sr-only">Fundación</span>
-<h1>Los Colores de la Vida</h1>
-</div>
-</a>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Fundación Los Colores de la Vida">
+        <div class="logo">LC</div>
+        <div class="brand-text">
+          <span class="sr-only">Fundación</span>
+          <h1>Los Colores de la Vida</h1>
+        </div>
+      </a>
 
-  <button class="menu-btn" aria-expanded="false" aria-controls="primary-navigation">
-    <span class="hamburger"></span>
-  </button>
+      <!-- Botón menú móvil -->
+      <button class="menu-btn" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="hamburger"></span>
+      </button>
 
+      <!-- Navegación -->
+      <nav id="primary-navigation" class="nav-links" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="transparencia.html">Transparencia</a>
+        <a href="sobre.html">Sobre nosotros</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="voluntarios.html">Voluntarios</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="btn donate" href="contacto.html#donar">Donar</a>
+      </nav>
+    </div>
+  </header>
 
-<nav id="primary-navigation" class="nav-links" aria-label="Menú principal">
-<a href="index.html">Inicio</a>
-<a href="transparencia.html">Transparencia</a>
-<a href="sobre.html">Sobre nosotros</a>
-<a href="proyectos.html">Proyectos</a>
-<a href="voluntarios.html">Voluntarios</a>
-<a href="contacto.html">Contacto</a>
-<a class="btn donate" href="contacto.html#donar">Donar</a>
-</nav>
-</div>
-</header>
+  <!-- ================== MAIN ================== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="kicker">Fundación</span>
+          <h2>Tejiendo oportunidades para familias en Usme y Ciudad Bolívar</h2>
+          <p class="lead">Acompañamos a madres cabeza de familia, comunidades afro, población LGTBIQ+ y adultos mayores con talleres, ayudas técnicas y generación de ingresos.</p>
+
+          <div class="hero-ctas">
+            <a class="btn primary" href="contacto.html#donar">Dona ahora</a>
+            <a class="btn outline" href="voluntarios.html">Hazte voluntario</a>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-image"
+            role="img"
+            aria-label="Comunidad trabajando en talleres"
+            style="background-image:url('https://images.unsplash.com/photo-1520975912938-7b3f4b7b9b63?q=80&w=1400&auto=format&fit=crop');">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="wrap intro" aria-labelledby="quehacemos">
+      <h3 id="quehacemos">Qué hacemos</h3>
+      <div class="grid-3">
+        <article class="card">
+          <h4>Formación</h4>
+          <p>Programas para fortalecer competencias laborales y emprendimiento.</p>
+        </article>
+
+        <article class="card">
+          <h4>Ayudas técnicas</h4>
+          <p>Entregamos soportes y ayudas para mejorar la autonomía.</p>
+        </article>
+
+        <article class="card">
+          <h4>Participación comunitaria</h4>
+          <p>Proyectos impulsados desde las comunidades para su sostenibilidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="wrap section" id="proyectos">
+      <h3>Proyectos destacados</h3>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4>Curso con SENA</h4>
+          <p>Formación para madres y jóvenes.</p>
+        </div>
+
+        <div class="card">
+          <h4>Entrega de regalos</h4>
+          <p>Jornadas de apoyo para niños en situación de vulnerabilidad.</p>
+        </div>
+
+        <div class="card">
+          <h4>Salida recreativa</h4>
+          <p>Actividades de convivencia para beneficiarios.</p>
+        </div>
+      </div>
+
+      <p class="center">
+        <a class="btn outline" href="proyectos.html">Ver todos los proyectos</a>
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="wrap section" id="faq">
+      <h3>Preguntas frecuentes</h3>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4>¿Cómo donar?</h4>
+          <p>Nequi o Daviplata: <strong>3213894520</strong>. También transferencia Bancolombia.</p>
+        </div>
+
+        <div class="card">
+          <h4>¿Cómo ser voluntario?</h4>
+          <p>Escribe a <a href="mailto:loscoloresdelavida2021@gmail.com">loscoloresdelavida2021@gmail.com</a>.</p>
+        </div>
+
+        <div class="card">
+          <h4>¿Dónde operan?</h4>
+          <p>Usme y Ciudad Bolívar, Bogotá D.C.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================== FOOTER ================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Fundación Los Colores de la Vida</h4>
+        <p>Promoviendo la autonomía y el bienestar en nuestras comunidades.</p>
+        <p class="small">© <span id="year"></span> Fundación Los Colores de la Vida</p>
+      </div>
+
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="transparencia.html">Transparencia</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="voluntarios.html">Voluntarios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+
+</body>
 </html>
