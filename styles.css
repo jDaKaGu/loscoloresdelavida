@@ -29,37 +29,54 @@ color:var(--text);
 
 
 /* Header */
-.site-header{background-color:FFA500;color:white;padding:5px 0}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-img {width: 80px;height: auto;border-radius: 8px;}
-.brand-text h1{font-size:18px;margin:0;font-weight:700}
-
-header {
-  background-color: #FFA500; /* naranja, puedes cambiar el código si quieres otro tono */
-  color: white; /* para el texto dentro del header */
-  padding: 20px; /* opcional, para darle espacio interno */
+/* Header compacto */
+header.site-header {
+  background-color: #FFA500;
+  padding: 5px 0; /* muy pequeño */
+  color: white;
 }
 
-/* Botones del menú */
+/* Contenedor de elementos alineados */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+/* Logo pequeño */
+.brand .logo-img {
+  width: 50px; /* más pequeño para reducir altura */
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Menú horizontal */
 .site-nav {
   display: flex;
-  gap: 20px; /* espacio entre botones */
+  gap: 10px;
 }
 
-.site-nav a {
+/* Botones visibles y estilizados */
+.btn-nav {
   display: inline-block;
+  padding: 4px 10px; /* reducido para header compacto */
+  background: rgba(255,255,255,0.2);
   color: white;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
 }
 
-.site-nav a:hover {
-  background: rgba(255,255,255,0.2);
+.btn-nav:hover {
+  background: rgba(255,255,255,0.4);
 }
+
 
 .hero-grid {
   display: flex;
