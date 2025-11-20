@@ -63,6 +63,7 @@ header.site-header {
 /* Nombre de la fundación */
 .brand h1 {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem; /* legible pero compacto */
   font-weight: 700;
   text-decoration: none;
