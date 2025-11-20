@@ -216,7 +216,7 @@ header.site-header {
   justify-content: center;
 }
 
-/* Sección de proyectos */
+
 .proyectos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -224,66 +224,47 @@ header.site-header {
   margin-top: 40px;
 }
 
-/* Tarjetas individuales */
+/* Tarjeta de actividad */
 .proyecto {
-  height: 300px;
+  background-color: var(--card);
   border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
   padding: 20px;
-  color: white;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Overlay para mejor legibilidad */
-.proyecto::before {
-  content: '';
-  position: absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.35); /* sombra ligera */
+/* Imagen / slider dentro de la tarjeta */
+.proyecto-slider {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
   border-radius: 12px;
-  z-index: 0;
 }
 
-.proyecto-info {
-  position: relative;
-  z-index: 1;
+.proyecto-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene proporción y rellena el contenedor */
+  transition: transform 0.3s ease;
 }
 
-/* Hover atractivo */
-.proyecto:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+.proyecto-slider img:hover {
+  transform: scale(1.05); /* efecto sutil al pasar el mouse */
 }
 
-/* Fondos específicos por actividad */
-.mundo-aventura {
-  background-image: url('assets/ma-1.jpg');
-}
-
-.abuelos {
-  background-image: url('assets/abuelos-1.jpg');
-}
-
-.jornadas-comunitarias {
-  background-image: url('assets/0.jpg');
-}
-
-/* Tipografía dentro de las tarjetas */
-.proyecto-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 20px;
+/* Texto de la tarjeta */
+.proyecto h3 {
+  margin: 0;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
 .proyecto-info p {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.95rem;
   line-height: 1.4;
 }
 
