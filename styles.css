@@ -152,6 +152,10 @@ header.site-header {
   text-align: left;
 }
 
+.hero-ctas {
+  margin-top: 30px; 
+}
+
 /* Botones */
 .hero-ctas a.btn {
   margin-right: 15px;
