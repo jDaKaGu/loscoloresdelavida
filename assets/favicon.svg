@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo blanco -->
+  <rect width="512" height="512" fill="#ffffff"/>
+
+  <!-- Tronco -->
+  <path d="M250 420 C240 360 235 300 255 240 C275 300 270 360 260 420 Z"
+        fill="#000000"/>
+
+  <!-- Ramas del tronco -->
+  <path d="M255 250 C220 230 200 200 190 180" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+  <path d="M255 250 C290 230 310 200 320 180" stroke="#000000" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Hojas estilo brochazo -->
+
+  <!-- Rojo -->
+  <ellipse cx="180" cy="150" rx="55" ry="40" fill="#e63939" opacity="0.92"
+           transform="rotate(-12 180 150)"/>
+  <ellipse cx="210" cy="120" rx="48" ry="35" fill="#d62828" opacity="0.85"
+           transform="rotate(8 210 120)"/>
+
+  <!-- Naranja -->
+  <ellipse cx="250" cy="110" rx="60" ry="42" fill="#ff7a00" opacity="0.88"
+           transform="rotate(-5 250 110)"/>
+  <ellipse cx="290" cy="135" rx="45" ry="32" fill="#ff9b32" opacity="0.85"
+           transform="rotate(12 290 135)"/>
+
+  <!-- Amarillo (mezcla entre naranja y azul, aporta vida) -->
+  <ellipse cx="230" cy="160" rx="58" ry="38" fill="#ffdd33" opacity="0.82"
+           transform="rotate(4 230 160)"/>
+
+  <!-- Verde -->
+  <ellipse cx="320" cy="160" rx="60" ry="40" fill="#2ecc71" opacity="0.9"
+           transform="rotate(-14 320 160)"/>
+  <ellipse cx="290" cy="190" rx="48" ry="35" fill="#28b463" opacity="0.85"
+           transform="rotate(5 290 190)"/>
+
+  <!-- Azul -->
+  <ellipse cx="260" cy="180" rx="55" ry="36" fill="#2e86de" opacity="0.9"
+           transform="rotate(-18 260 180)"/>
+  <ellipse cx="300" cy="210" rx="50" ry="32" fill="#54a0ff" opacity="0.85"
+           transform="rotate(10 300 210)"/>
+</svg>
