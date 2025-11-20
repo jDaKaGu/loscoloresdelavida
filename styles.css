@@ -143,7 +143,7 @@ header.site-header {
 /* Mitad izquierda */
 .hero-left {
   flex: 1;
-  background: linear-gradient(90deg, #076b5a, #dcea7d);
+  background: linear-gradient(90deg, #FF7F50, #FFA07A);
   color: white;
   display: flex;
   flex-direction: column;
@@ -163,8 +163,8 @@ header.site-header {
 }
 
 .hero-ctas a.btn.primary {
-  background-color: #ffffff;
-  color: #FFA500;
+  background-color: #ffffffcc;
+  color: #FF7F50;
 }
 
 .hero-ctas a.btn.primary:hover {
