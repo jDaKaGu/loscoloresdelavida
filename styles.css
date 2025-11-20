@@ -30,9 +30,10 @@ color:var(--text);
 
 /* Header compacto */
 /* Header con fondo naranja y altura equilibrada */
+/* Header con degradado verde */
 header.site-header {
-  background-color: #FFA500;
-  padding: 10px 0; /* altura equilibrada */
+  background: linear-gradient(90deg, #076b5a, #00b59c);
+  padding: 10px 0;
 }
 
 /* Contenedor interno alineado */
@@ -48,7 +49,7 @@ header.site-header {
 
 /* Logo */
 .brand .logo-img {
-  width: 50px; /* tamaño equilibrado */
+  width: 40px;
   height: auto;
 }
 
@@ -62,22 +63,28 @@ header.site-header {
 
 /* Nombre de la fundación */
 .brand h1 {
-  margin: 0;
-  font-family: 'Poppins', bold;
-  font-size: 1.3rem; /* legible pero compacto */
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
+  font-size: 1.3rem; /* tamaño equilibrado */
+  margin: 0;
   text-decoration: none;
   color: white;
   line-height: 1.1;
 }
 
 /* Menú horizontal */
+.site-nav {
+  display: flex;
+  gap: 12px;
+}
+
+/* Botones más llamativos */
 .site-nav a {
   display: inline-block;
   padding: 6px 16px;
   border-radius: 12px;
-  background-color: #ffffff; /* blanco sólido */
-  color: #FFA500; /* naranja header */
+  background-color: white;
+  color: #076b5a; /* coincide con el degradado */
   font-weight: 700;
   text-decoration: none;
   font-size: 0.95rem;
@@ -85,11 +92,11 @@ header.site-header {
 }
 
 .site-nav a:hover {
-  background-color: #ffd699; /* hover más cálido */
-  color: #e67e22;
+  background-color: #e0f2ef; /* hover suave */
+  color: #00b59c;
 }
 
-/* Responsive: Header y menú adaptables */
+/* Responsive */
 @media (max-width: 992px) {
   .header-inner {
     flex-direction: column;
