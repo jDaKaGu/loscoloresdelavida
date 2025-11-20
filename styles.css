@@ -60,24 +60,23 @@ header.site-header {
   gap: 10px;
 }
 
-.brand-text h1, .brand-text a {
-  text-decoration: none; /* quita la subrayado */
+/* Quitar subrayado del nombre de la fundación */
+.brand h1, .brand a {
+  text-decoration: none !important;
 }
 
 /* Botones visibles y estilizados */
-.btn-nav {
-  display: inline-block;
-  padding: 4px 10px; /* reducido para header compacto */
+.site-nav a {
+  border-radius: 12px !important;
+  padding: 6px 14px; /* opcional, para que los botones se vean mejor */
   background: rgba(255,255,255,0.2);
   color: white;
-  border-radius: 12 px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
   transition: background 0.3s ease;
 }
 
-.btn-nav:hover {
+.site-nav a:hover {
   background: rgba(255,255,255,0.4);
 }
 
