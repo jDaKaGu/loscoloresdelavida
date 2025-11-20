@@ -3,9 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
 <title>Fundación Los Colores de la Vida</title>
 <meta name="description" content="Fundación Los Colores de la Vida - proyectos sociales, comunidad, voluntariado y transparencia.">
+<meta name="author" content="Fundación Los Colores de la Vida">
+<meta name="theme-color" content="#40E0D0">
+
+<!-- Open Graph para redes sociales -->
+<meta property="og:title" content="Fundación Los Colores de la Vida">
+<meta property="og:description" content="Proyectos sociales, comunidad, voluntariado y transparencia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/colores_logo.svg">
 
 <link rel="stylesheet" href="styles.css">
 <script defer src="scripts.js"></script>
@@ -17,16 +24,18 @@
 
 <body>
 
-<header class="site-header">
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<header class="site-header" role="banner">
   <div class="header-inner">
     <!-- Logo + Nombre de la fundación -->
-    <a href="/" class="brand">
-      <img src="assets/colores_logo.svg" class="logo-img" alt="Logo">
+    <a href="/" class="brand" aria-label="Página principal - Fundación Los Colores de la Vida">
+      <img src="assets/colores_logo.svg" class="logo-img" alt="Logo de la fundación">
       <h1>Los Colores de la Vida</h1>
     </a>
 
     <!-- Menú principal -->
-    <nav class="site-nav">
+    <nav class="site-nav" role="navigation" aria-label="Menú principal">
       <a href="#proyectos">Proyectos</a>
       <a href="#donaciones">Donar</a>
       <a href="#contacto">Contacto</a>
@@ -34,21 +43,39 @@
   </div>
 </header>
 
-
-
 <!-- SECCIONES DINÁMICAS -->
-<main id="main">
+<main id="main" role="main">
 
-  <section data-section="hero"></section>
-  <section data-section="about"></section>
-  <section data-section="proyectos"></section>
-  <section data-section="voluntarios"></section>
-  <section data-section="transparencia"></section>
-  <section data-section="donaciones"></section>
+  <section data-section="hero">
+    <!-- Contenido dinámico cargado con JS -->
+  </section>
+
+  <section data-section="about">
+    <p>Cargando...</p> <!-- fallback -->
+  </section>
+
+  <section data-section="proyectos">
+    <p>Cargando...</p>
+  </section>
+
+  <section data-section="voluntarios">
+    <p>Cargando...</p>
+  </section>
+
+  <section data-section="transparencia">
+    <p>Cargando...</p>
+  </section>
+
+  <section data-section="donaciones">
+    <p>Cargando...</p>
+  </section>
 
 </main>
 
-<footer data-section="footer"></footer>
+<footer data-section="footer" role="contentinfo">
+  <p>&copy; 2025 Fundación Los Colores de la Vida. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
+
