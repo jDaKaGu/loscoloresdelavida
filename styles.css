@@ -29,7 +29,7 @@ color:var(--text);
 
 
 /* Header */
-.site-header{background-color:FFA500;color:white;padding:20px 0}
+.site-header{background-color:FFA500;color:white;padding:10px 0}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-img {width: 80px;height: auto;border-radius: 8px;}
@@ -42,17 +42,23 @@ header {
 }
 
 /* Botones del menú */
+.site-nav {
+  display: flex;
+  gap: 20px; /* espacio entre botones */
+}
+
 .site-nav a {
   display: inline-block;
-  margin-left: 20px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .site-nav a:hover {
-  color: #ffebcc;
+  background: rgba(255,255,255,0.2);
 }
 
 .hero-grid {
