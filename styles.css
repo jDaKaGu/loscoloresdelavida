@@ -33,8 +33,14 @@ color:var(--text);
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-img {width: 80px;height: auto;border-radius: 8px;}
-
 .brand-text h1{font-size:18px;margin:0;font-weight:700}
+
+header {
+  background-color: #FFA500; /* naranja, puedes cambiar el código si quieres otro tono */
+  color: white; /* para el texto dentro del header */
+  padding: 20px; /* opcional, para darle espacio interno */
+}
+
 
 /* paleta colorida para hero */
 :root{
