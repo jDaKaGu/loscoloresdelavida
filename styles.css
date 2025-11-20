@@ -19,6 +19,12 @@ font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue
 background:var(--bg);
 color:var(--text);
 -webkit-font-smoothing:antialiased;
+    background-image: url('assets/0.jpg'); /* ruta de tu imagen */
+    background-size: cover;        /* la imagen cubre toda la pantalla */
+    background-position: center;   /* centra la imagen */
+    background-repeat: no-repeat;  /* evita que se repita */
+    background-attachment: fixed;  /* opcional: la imagen queda fija al hacer scroll */
+    font-family: 'Inter', system-ui, sans-serif; /* mantiene tu tipografía */
 }
 .wrap{width:90%;max-width:var(--max-width);margin:0 auto;padding:36px 0}
 
