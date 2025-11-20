@@ -54,6 +54,19 @@ header.site-header {
   border-radius: 6px;
 }
 
+.brand {
+  display: flex;
+  align-items: center; /* centra verticalmente el texto con el logo */
+  gap: 10px; /* espacio entre logo y texto */
+  text-decoration: none; /* seguridad adicional */
+}
+
+.brand h1 {
+  font-size: 1rem; /* más pequeño si el header es compacto */
+  font-weight: 700;
+  margin: 0;
+}
+
 /* Menú horizontal */
 .site-nav {
   display: flex;
