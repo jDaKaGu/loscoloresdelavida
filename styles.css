@@ -64,7 +64,7 @@ header.site-header {
 .brand h1 {
   margin: 0;
   font-family: 'Poppins', bold;
-  font-size: 2rem; /* legible pero compacto */
+  font-size: 1rem; /* legible pero compacto */
   font-weight: 700;
   text-decoration: none;
   color: white;
