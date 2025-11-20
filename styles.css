@@ -32,7 +32,7 @@ color:var(--text);
 .site-header{background:transparent;padding:18px 0}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.logo-svg{width: 58px;height: auto;}
 .brand-text h1{font-size:18px;margin:0;font-weight:700}
 
 /* paleta colorida para hero */
