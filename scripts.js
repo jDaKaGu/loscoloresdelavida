@@ -1,4 +1,7 @@
 // Rediseño: scripts.js — mejora y adaptación del script original
+
+
+if (menuBtn && navMenu) {
 menuBtn.addEventListener('click', () => {
 const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
 menuBtn.setAttribute('aria-expanded', String(!expanded));
