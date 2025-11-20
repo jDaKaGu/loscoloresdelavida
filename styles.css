@@ -128,6 +128,17 @@ header {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+.hero-right .hero-photo {
+  background-image: url('/img/hero-principal.jpg');
+  width: 90%;
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
 /* Responsive */
 @media (max-width: 992px) {
   .hero-grid {
