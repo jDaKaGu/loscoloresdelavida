@@ -29,7 +29,7 @@ color:var(--text);
 
 
 /* Header */
-.site-header{background-color:FFA500;color:white;padding:10px 0}
+.site-header{background-color:FFA500;color:white;padding:5px 0}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
 .logo-img {width: 80px;height: auto;border-radius: 8px;}
