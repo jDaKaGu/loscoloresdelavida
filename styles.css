@@ -64,7 +64,7 @@ header.site-header {
 .brand h1 {
   margin: 0;
   font-family: 'Poppins', bold;
-  font-size: 1.2rem; /* legible pero compacto */
+  font-size: 1.3rem; /* legible pero compacto */
   font-weight: 700;
   text-decoration: none;
   color: white;
@@ -72,26 +72,20 @@ header.site-header {
 }
 
 /* Menú horizontal */
-.site-nav {
-  display: flex;
-  gap: 12px;
-}
-
-/* Botones visibles y redondeados */
 .site-nav a {
   display: inline-block;
-  padding: 6px 14px; /* tamaño equilibrado */
+  padding: 6px 16px;
   border-radius: 12px;
-  background-color: white; /* contraste con el header */
-  color: #FFA500;
-  font-weight: 600;
+  background-color: #ffffff; /* blanco sólido */
+  color: #FFA500; /* naranja header */
+  font-weight: 700;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
 .site-nav a:hover {
-  background-color: #ffebcc;
+  background-color: #ffd699; /* hover más cálido */
   color: #e67e22;
 }
 
