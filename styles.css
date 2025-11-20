@@ -60,6 +60,10 @@ header.site-header {
   gap: 10px;
 }
 
+.brand-text h1, .brand-text a {
+  text-decoration: none; /* quita la subrayado */
+}
+
 /* Botones visibles y estilizados */
 .btn-nav {
   display: inline-block;
