@@ -158,7 +158,12 @@ header.site-header {
 }
 
 .hero-left .kicker {
-  color: #076b5a; /* verde profundo */
+  color: #076b5a; 
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .hero-ctas {
