@@ -216,6 +216,27 @@ header.site-header {
   justify-content: center;
 }
 
+.mundo aventura {
+    width: 100%;
+    height: 250px;          /* ajusta según necesites */
+    background-size: cover;  /* la imagen cubre el div */
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagen específica por proyecto */
+.mundo aventura {
+    background-image: url('assets/ma-2.jpg');
+}
+
+.abuelos {
+    background-image: url('assets/abuelos-1.jpg');
+}
+
+
 .hero-photo {
   width: 90%;
   height: 90%;
