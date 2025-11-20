@@ -46,4 +46,6 @@ color:var(--text);
 .btn.donate{background:var(--accent);color:white}
 
 
+.menu-btn{display:none;background:none;border:0;padding:8px;border-radius:8px}
+.menu-btn .hamburger{width:22px;height:2px;background:var(--text);display:block;position:relative}
 .hero, .card, .hero-copy{opacity:0;transform:translateY(10px)}
