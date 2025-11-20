@@ -152,6 +152,15 @@ header.site-header {
   text-align: left;
 }
 
+.hero-left h2,
+.hero-left .lead {
+  color: #0b1020; /* azul muy oscuro / casi negro */
+}
+
+.hero-left .kicker {
+  color: #076b5a; /* verde profundo */
+}
+
 .hero-ctas {
   margin-top: 30px; 
 }
