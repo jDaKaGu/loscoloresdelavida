@@ -76,3 +76,41 @@ color:var(--text);
 .menu-btn{display:none;background:none;border:0;padding:8px;border-radius:8px}
 .menu-btn .hamburger{width:22px;height:2px;background:var(--text);display:block;position:relative}
 .hero, .card, .hero-copy{opacity:0;transform:translateY(10px)}
+
+/* ====== HERO NUEVO COLORIDO ====== */
+
+#hero, [data-section="hero"] {
+  display: block;
+}
+
+.hero-colorful {
+  padding: 60px 0;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(4,103,193,0.20) 0%,
+    rgba(230,61,61,0.12) 30%,
+    rgba(255,191,46,0.12) 60%,
+    rgba(0,170,90,0.15) 100%
+  );
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-copy h2 {
+  color: #0467c1;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.hero-copy p {
+  color: #333;
+  font-size: 18px;
+}
+
