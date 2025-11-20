@@ -35,6 +35,32 @@ color:var(--text);
 .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
 .brand-text h1{font-size:18px;margin:0;font-weight:700}
 
+/* paleta colorida para hero */
+:root{
+  --c1: #0467c1; /* azul */
+  --c2: #e63d3d; /* rojo */
+  --c3: #ffbf2e; /* amarillo */
+  --c4: #ff7a00; /* naranja */
+}
+
+/* Hero colorido */
+.hero-colorful {
+  padding: 60px 0;
+  background: linear-gradient(135deg, rgba(4,103,193,0.06) 0%, rgba(230,61,61,0.03) 35%, rgba(255,191,46,0.02) 65%);
+  border-radius: 16px;
+}
+.hero-grid { display:grid; grid-template-columns:1fr 520px; gap:28px; align-items:center; }
+.hero-copy h2 { color: var(--c1); font-size:36px; }
+.hero-copy .lead { color: #334; font-size:17px; margin-bottom:18px; }
+
+/* Tarjeta foto */
+.hero-card { border-radius:14px; overflow:hidden; box-shadow:0 18px 40px rgba(0,0,0,0.12); }
+.hero-photo { min-height:320px; background-size:cover; background-position:center; display:block; filter: saturate(1.05) contrast(1.02); }
+
+/* pequeños acentos de color en botones */
+.btn.primary { background: linear-gradient(90deg,var(--c1),var(--c4)); color:#fff; box-shadow:0 8px 24px rgba(4,103,193,0.12);}
+.btn.outline { border:2px solid rgba(0,0,0,0.06); color:var(--c2); }
+
 
 /* Nav */
 .nav-links{display:flex;gap:16px;align-items:center}
