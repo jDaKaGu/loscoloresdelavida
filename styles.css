@@ -28,15 +28,14 @@ color:var(--text);
 .skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#111;color:#fff;border-radius:6px}
 
 
-/* Header */
 /* Header compacto */
+/* Header más compacto */
 header.site-header {
   background-color: #FFA500;
-  padding: 5px 0; /* muy pequeño */
-  color: white;
+  padding: 4px 0; /* reducción leve del padding vertical */
 }
 
-/* Contenedor de elementos alineados */
+/* Contenedor interno */
 .header-inner {
   display: flex;
   align-items: center;
@@ -47,30 +46,44 @@ header.site-header {
   gap: 15px;
 }
 
-/* Logo pequeño */
+/* Logo más pequeño */
 .brand .logo-img {
-  width: 50px; /* más pequeño para reducir altura */
+  width: 35px; /* ligeramente más pequeño */
   height: auto;
-  border-radius: 6px;
 }
 
+/* Nombre de la fundación alineado con logo */
 .brand {
   display: flex;
-  align-items: center; /* centra verticalmente el texto con el logo */
-  gap: 10px; /* espacio entre logo y texto */
-  text-decoration: none; /* seguridad adicional */
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
 .brand h1 {
-  font-size: 1rem; /* más pequeño si el header es compacto */
-  font-weight: 700;
   margin: 0;
+  font-size: 0.95rem; /* ligeramente más pequeño */
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
 }
 
-/* Menú horizontal */
-.site-nav {
-  display: flex;
-  gap: 10px;
+/* Botones del menú */
+.site-nav a {
+  display: inline-block;
+  padding: 4px 12px; /* más compacto */
+  border-radius: 12px;
+  background-color: white; /* más visible */
+  color: #FFA500;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.site-nav a:hover {
+  background-color: #ffebcc;
+  color: #e67e22;
 }
 
 /* Quitar subrayado del nombre de la fundación */
