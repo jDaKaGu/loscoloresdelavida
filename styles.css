@@ -252,7 +252,7 @@ header.site-header {
 }
 
 .proyecto-slider img:hover {
-  transform: scale(1.05); /* efecto sutil al pasar el mouse */
+  transform: none; /* efecto sutil al pasar el mouse */
 }
 
 /* Texto de la tarjeta */
