@@ -247,12 +247,12 @@ header.site-header {
 .proyecto-slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantiene proporción y rellena el contenedor */
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  transition: none;
 }
 
 .proyecto-slider img:hover {
-  transform: none; /* efecto sutil al pasar el mouse */
+  transform: none;
 }
 
 /* Texto de la tarjeta */
