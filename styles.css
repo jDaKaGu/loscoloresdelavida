@@ -96,6 +96,99 @@ header.site-header {
   background: #e0f2ef;
   color: #00b59c;
 }
+
+/* --- Estilos para el menú hamburguesa --- */
+
+/* Ocultar el checkbox visualmente, pero dejarlo funcional */
+.menu-toggle {
+  display: none;
+}
+
+/* Icono hamburguesa */
+.menu-icon {
+  display: none; /* se mostrará solo en móvil */
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  width: 24px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.menu-icon .navicon::before,
+.menu-icon .navicon::after {
+  content: '';
+  background: white;
+  display: block;
+  height: 2px;
+  width: 24px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon .navicon::before {
+  top: -8px;
+}
+
+.menu-icon .navicon::after {
+  top: 8px;
+}
+
+/* Cuando el checkbox está marcado: animar icono */
+.menu-toggle:checked + .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-toggle:checked + .menu-icon .navicon::before {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.menu-toggle:checked + .menu-icon .navicon::after {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/* Menú de navegación - versión oculta en móvil por defecto */
+.site-nav {
+  display: flex;
+  gap: 12px;
+}
+
+/* Estilos responsive para móvil */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%; /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #076b5a, #00b59c);
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav a {
+    padding: 12px 20px;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* Cuando esté activo (checkbox marcado), expandir menú */
+  .menu-toggle:checked ~ .site-nav {
+    max-height: 300px; /* ajusta según la cantidad de links, o usa “none” */
+  }
+}
+
+
 .hero-grid {
   display: flex;
   flex-wrap: wrap;
@@ -342,38 +435,21 @@ header.site-header {
 /* --- FIX DEL HEADER EN MÓVILES --- */
 @media (max-width: 768px) {
 
-  header.site-header {
-    width: 100%;
-  }
-
   .header-inner {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
   }
 
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
   .site-nav {
-    display: flex;
     width: 100%;
-    justify-content: flex-start;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
   }
 
   .site-nav a {
-    padding: 8px 16px;
     font-size: 0.95rem;
+    padding: 8px 14px;
     border-radius: 10px;
   }
 }
-
