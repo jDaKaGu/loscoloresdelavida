@@ -123,14 +123,11 @@ header.site-header {
 
 /* Botones visibles y estilizados */
 .site-nav a {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  font-weight: 600;
-  padding: 6px 14px;
+  padding: 6px 16px;
   border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  background-color: white;
+  color: #076b5a;
+  font-weight: 700;
 }
 
 .site-nav a:hover {
@@ -139,12 +136,21 @@ header.site-header {
   border-radius: 8px;
 }
 
-
 .hero-grid {
-  display: flex;
-  flex-wrap: wrap;
-  height: 550px;
+    height: auto;
+    min-height: 550px;
 }
+
+@media (max-width: 768px) {
+  .hero-grid {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-left, .hero-right {
+    height: auto;
+  }
+}
+
 
 /* Mitad izquierda */
 .hero-left {
@@ -156,6 +162,18 @@ header.site-header {
   justify-content: center;
   padding: 50px 40px;
   text-align: left;
+}
+
+@media (max-width: 480px) {
+  .hero-left {
+    padding: 20px 16px;
+  }
+  .hero-left h2 {
+    font-size: 1.7rem;
+  }
+  .hero-left .lead {
+    font-size: 1rem;
+  }
 }
 
 .hero-left h2,
