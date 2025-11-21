@@ -84,6 +84,16 @@
   <p>&copy; 2025 Fundación Los Colores de la Vida. Todos los derechos reservados.</p>
 </footer>
 
+  <script>
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".site-nav");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    nav.classList.toggle("open");
+  });
+  </script>
+
 </body>
 </html>
 
