@@ -1,7 +1,4 @@
-/* ==========================
-   HEADER GENERAL
-========================== */
-
+/* --- Header --- */
 .main-header {
   width: 100%;
   padding: 10px 20px;
@@ -12,17 +9,17 @@
   top: 0;
   left: 0;
   background: linear-gradient(90deg, #076b5a, #00b59c);
-  z-index: 9999;
+  z-index: 1000;
 }
 
-/* Sección izquierda: menú + logo */
+/* Zona izquierda: menú + logo */
 .left-zone {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* Botón menú */
+/* Botón hamburguesa */
 .menu-btn {
   background: none;
   border: none;
@@ -35,7 +32,7 @@
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .header-logo img {
@@ -43,13 +40,13 @@
 }
 
 .header-logo span {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: white; /* más visible */
+  color: white;
   line-height: 1;
 }
 
-/* Botón DONAR (derecha) */
+/* Botón Donar */
 .donar-btn {
   background: #ff7a00;
   color: white;
@@ -57,27 +54,24 @@
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: background 0.3s;
 }
 
 .donar-btn:hover {
   background: #ff9733;
 }
 
-/* ==========================
-   MENÚ LATERAL (IZQUIERDA)
-========================== */
-
+/* --- Menú lateral (izquierda) --- */
 .side-menu {
   position: fixed;
   top: 0;
-  left: -270px;
-  width: 270px;
+  left: -260px;
+  width: 260px;
   height: 100vh;
-  background: #003c32; /* CONTRASTE profesional */
-  padding: 25px 20px;
+  background: rgba(0, 60, 50, 0.95); /* color contrastante + casi opaco */
+  padding: 20px;
   transition: left 0.3s ease;
-  z-index: 99999;
+  z-index: 999;
 }
 
 .side-menu.active {
@@ -94,12 +88,12 @@
   float: right;
 }
 
-/* Header dentro del menú */
+/* Encabezado dentro del menú */
 .menu-header {
-  margin: 45px 0 25px 0;
+  margin: 40px 0 20px 0;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .menu-header img {
@@ -107,12 +101,12 @@
 }
 
 .menu-header span {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.2rem;
   color: white;
+  font-weight: 700;
 }
 
-/* Items */
+/* Links del menú */
 .side-menu ul {
   list-style: none;
   padding: 0;
@@ -120,33 +114,30 @@
 }
 
 .side-menu li {
-  margin: 18px 0;
+  margin: 16px 0;
 }
 
 .side-menu a {
+  color: #e0f2ef;
   text-decoration: none;
   font-size: 1.1rem;
-  color: #d7fff6;
-  transition: 0.2s ease;
+  transition: color 0.2s;
 }
 
 .side-menu a:hover {
   color: #ffffff;
 }
 
-/* ==========================
-   OVERLAY PARA CERRAR AL HACER CLIC FUERA
-========================== */
-
+/* Overlay para clic fuera */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 99998;
+  z-index: 998;
 }
 
 .menu-overlay.active {
