@@ -27,17 +27,23 @@
 <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
 <header class="main-header">
-  <a href="#" class="donar-btn">Donar</a>
+  
+  <!-- Botón menú + logo -->
+  <div class="left-zone">
+    <button class="menu-btn" id="open-menu">&#9776;</button>
 
-  <div class="header-logo">
-    <img src="assets/colores_logo.svg" alt="Logo">
-    <span>Los Colores de la Vida</span>
+    <div class="header-logo">
+      <img src="assets/colores_logo.svg" alt="Logo">
+      <span>Los Colores de la Vida</span>
+    </div>
   </div>
 
-  <button class="menu-btn" id="open-menu">&#9776;</button>
+  <!-- Botón Donar (a la derecha) -->
+  <a href="#donaciones" class="donar-btn">Donar</a>
 
-  <!-- Menú lateral -->
+  <!-- Menú lateral (izquierda) -->
   <nav class="side-menu" id="side-menu">
+
     <button class="close-btn" id="close-menu">&times;</button>
 
     <div class="menu-header">
@@ -51,9 +57,10 @@
       <li><a href="#equipo">Equipo</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-  </nav>
-</header>
 
+  </nav>
+
+</header>
 
 <!-- SECCIONES DINÁMICAS -->
 <main id="main" role="main">
