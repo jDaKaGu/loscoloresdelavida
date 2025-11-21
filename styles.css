@@ -137,8 +137,10 @@ header.site-header {
 }
 
 .hero-grid {
-    height: auto;
-    min-height: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 550px;
 }
 
 @media (max-width: 768px) {
@@ -162,18 +164,6 @@ header.site-header {
   justify-content: center;
   padding: 50px 40px;
   text-align: left;
-}
-
-@media (max-width: 480px) {
-  .hero-left {
-    padding: 20px 16px;
-  }
-  .hero-left h2 {
-    font-size: 1.7rem;
-  }
-  .hero-left .lead {
-    font-size: 1rem;
-  }
 }
 
 .hero-left h2,
@@ -284,31 +274,108 @@ header.site-header {
   line-height: 1.4;
 }
 
-
 .hero-photo {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background-repeat: no-repeat;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+/* --- Móviles pequeños (0–480px) --- */
+@media (max-width: 480px) {
+
   .hero-grid {
     flex-direction: column;
     height: auto;
+    gap: 20px;
   }
-  .hero-left, .hero-right {
-    width: 100%;
-    height: 300px;
-  }
+
   .hero-left {
-    padding: 30px 20px;
+    width: 100%;
+    padding: 22px 18px;
+    text-align: left;
+  }
+
+  .hero-left h2 {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .hero-left .lead {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .hero-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-ctas a.btn {
+    width: auto;
+    padding: 12px 20px;
+  }
+}
+
+
+/* --- Tablets y pantallas medianas (481–992px) --- */
+@media (max-width: 992px) {
+
+  .hero-grid {
+    flex-direction: column;
+    height: auto;
+    gap: 35px;
+  }
+
+  .hero-left {
+    width: 100%;
+    padding: 35px 20px;
     text-align: center;
   }
+
+  .hero-left h2 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .hero-left .lead {
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .hero-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-photo {
+    width: 95%;
+    max-width: 450px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
   .hero-ctas a.btn {
-    margin: 0 10px 10px 0;
+    margin: 0;
   }
 }
