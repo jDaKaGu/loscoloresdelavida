@@ -29,22 +29,33 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- Logo -->
-    <a href="/" class="brand">
-      <img src="assets/colores_logo.svg" class="logo-img" alt="Logo Los Colores de la Vida">
-      <h1>Los Colores de la Vida</h1>
-    </a>
+    <!-- Izquierda: Logo + Nombre + Botón Donar -->
+    <div class="left-group">
+      <a href="/" class="brand">
+        <img src="assets/colores_logo.svg" class="logo-img" alt="Logo Los Colores de la Vida">
+        <h1>Los Colores de la Vida</h1>
+      </a>
+
+      <a href="#donaciones" class="donate-btn">Donar</a>
+    </div>
 
     <!-- Botón hamburguesa -->
     <button class="menu-toggle" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
 
-    <!-- Menú -->
+    <!-- Menú lateral -->
     <nav class="site-nav">
+      
+      <div class="menu-header">
+        <img src="assets/colores_logo.svg" class="menu-logo" alt="Logo">
+        <h2>Los Colores de la Vida</h2>
+        <button class="close-menu" aria-label="Cerrar menú">✕</button>
+      </div>
+
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
-      <a href="#donaciones">Donar</a>
+
     </nav>
 
   </div>
