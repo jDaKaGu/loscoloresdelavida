@@ -28,13 +28,17 @@
 
 <header class="site-header" role="banner">
   <div class="header-inner">
-    <!-- Logo + Nombre de la fundación -->
     <a href="/" class="brand" aria-label="Página principal - Fundación Los Colores de la Vida">
       <img src="assets/colores_logo.svg" class="logo-img" alt="Logo de la fundación">
       <h1>Los Colores de la Vida</h1>
     </a>
 
-    <!-- Menú principal -->
+    <!-- Checkbox para el toggle del menú -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <span class="navicon"></span>
+    </label>
+
     <nav class="site-nav" role="navigation" aria-label="Menú principal">
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
