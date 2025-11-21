@@ -1,4 +1,47 @@
-/* --- Header --- */
+/* =========================================================
+   VARIABLES DE COLOR Y ESTILOS BASE
+========================================================= */
+:root {
+  --color-header-start: #076b5a;
+  --color-header-end: #00b59c;
+  --color-accent: #ff7a00;      /* Botón Donar */
+  --color-accent-hover: #ff9933;
+  --color-menu-bg: rgba(0, 60, 50, 0.95);
+  --color-bg-light: #f6f9f8;
+  --color-text: #1a1a1a;
+  --color-muted: #5f6f6b;
+  --wrap-width: 1200px;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  background: white;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.wrap {
+  width: min(var(--wrap-width), 92%);
+  margin: auto;
+}
+
+.fade {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* =========================================================
+   HEADER Y MENÚ
+========================================================= */
 .main-header {
   width: 100%;
   padding: 10px 20px;
@@ -8,18 +51,17 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, #076b5a, #00b59c);
+  background: linear-gradient(90deg, var(--color-header-start), var(--color-header-end));
   z-index: 1000;
 }
 
-/* Zona izquierda: menú + logo */
 .left-zone {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-/* Botón hamburguesa */
+/* BOTÓN HAMBURGUESA */
 .menu-btn {
   background: none;
   border: none;
@@ -28,7 +70,7 @@
   cursor: pointer;
 }
 
-/* Logo + nombre */
+/* LOGO + NOMBRE */
 .header-logo {
   display: flex;
   align-items: center;
@@ -36,39 +78,40 @@
 }
 
 .header-logo img {
-  height: 34px;
+  height: 36px;
 }
 
 .header-logo span {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: white;
-  line-height: 1;
 }
 
-/* Botón Donar */
+/* BOTÓN DONAR (DERECHA) */
 .donar-btn {
-  background: #ff7a00;
+  background: var(--color-accent);
   color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .donar-btn:hover {
-  background: #ff9733;
+  background: var(--color-accent-hover);
 }
 
-/* --- Menú lateral (izquierda) --- */
+/* =========================================================
+   MENÚ LATERAL
+========================================================= */
 .side-menu {
   position: fixed;
   top: 0;
   left: -260px;
   width: 260px;
   height: 100vh;
-  background: rgba(0, 60, 50, 0.95); /* color contrastante + casi opaco */
+  background: var(--color-menu-bg);
   padding: 20px;
   transition: left 0.3s ease;
   z-index: 999;
@@ -78,7 +121,6 @@
   left: 0;
 }
 
-/* Botón cerrar */
 .close-btn {
   background: none;
   border: none;
@@ -88,9 +130,8 @@
   float: right;
 }
 
-/* Encabezado dentro del menú */
 .menu-header {
-  margin: 40px 0 20px 0;
+  margin: 40px 0 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -106,40 +147,245 @@
   font-weight: 700;
 }
 
-/* Links del menú */
+/* LINKS */
 .side-menu ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .side-menu li {
-  margin: 16px 0;
+  margin: 18px 0;
 }
 
 .side-menu a {
-  color: #e0f2ef;
+  color: #dff6f2;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.2s;
+  font-size: 1.15rem;
+  transition: 0.2s;
 }
 
 .side-menu a:hover {
   color: #ffffff;
 }
 
-/* Overlay para clic fuera */
+/* Overlay */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   display: none;
   z-index: 998;
 }
 
 .menu-overlay.active {
   display: block;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero-fixed {
+  margin-top: 80px; /* Evita que el header tape el hero */
+}
+
+.hero-grid {
+  display: flex;
+  align-items: stretch;
+  min-height: 78vh;
+}
+
+/* MITAD IZQUIERDA */
+.hero-left {
+  flex: 1;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #ff9a3c, #ff6a00);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-left .kicker {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.hero-left h2 {
+  font-size: 2.3rem;
+  margin: 10px 0 15px;
+}
+
+.hero-left .lead {
+  font-size: 1.2rem;
+  max-width: 500px;
+  opacity: 0.95;
+}
+
+/* BOTONES HERO */
+.hero-ctas {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn.primary {
+  background: white;
+  color: black;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* MITAD DERECHA (IMAGEN) */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* =========================================================
+   SECCIONES GENERALES
+========================================================= */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--color-header-start);
+}
+
+/* PÁRRAFOS */
+.wrap p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* =========================================================
+   PROYECTOS
+========================================================= */
+
+.proyectos-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.proyecto {
+  background: var(--color-bg-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.proyecto-slider img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.proyecto h3 {
+  margin-bottom: 10px;
+  color: var(--color-header-start);
+}
+
+/* =========================================================
+   BOTÓN DONAR EN SECCIÓN DONACIONES
+========================================================= */
+.btn.donate {
+  background: #ff7a00;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn.donate:hover {
+  background: #ff9933;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  margin-top: 60px;
+  padding: 40px 0;
+  background: #e5f3f0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* Smartphones */
+@media (max-width: 768px) {
+
+  .hero-grid {
+    flex-direction: column;
+  }
+
+  .hero-left {
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .hero-left h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero-right {
+    height: 300px;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-logo span {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Tablets → Desktop */
+@media (min-width: 769px) {
+  .proyectos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
