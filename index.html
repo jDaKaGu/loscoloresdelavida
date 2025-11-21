@@ -96,31 +96,29 @@
 <footer data-section="footer" role="contentinfo">
   <p>&copy; 2025 Fundación Los Colores de la Vida. Todos los derechos reservados.</p>
 </footer>
-
+  
 <script>
-  const openMenu = document.getElementById('open-menu');
-  const closeMenu = document.getElementById('close-menu');
+  const openBtn = document.getElementById('open-menu');
+  const closeBtn = document.getElementById('close-menu');
   const sideMenu = document.getElementById('side-menu');
   const overlay = document.getElementById('menu-overlay');
 
-  // Abrir menú
-  openMenu.addEventListener('click', () => {
+  openBtn.addEventListener('click', () => {
     sideMenu.classList.add('active');
     overlay.classList.add('active');
   });
 
-  // Cerrar con botón X
-  closeMenu.addEventListener('click', () => {
+  closeBtn.addEventListener('click', () => {
     sideMenu.classList.remove('active');
     overlay.classList.remove('active');
   });
 
-  // Cerrar haciendo clic fuera
   overlay.addEventListener('click', () => {
     sideMenu.classList.remove('active');
     overlay.classList.remove('active');
   });
 </script>
+
 
 
 
