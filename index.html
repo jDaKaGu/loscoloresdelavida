@@ -43,6 +43,8 @@
 
   <!-- Menú lateral (izquierda) -->
   <nav class="side-menu" id="side-menu">
+    <div class="menu-overlay" id="menu-overlay"></div>
+
 
     <button class="close-btn" id="close-menu">&times;</button>
 
@@ -99,15 +101,27 @@
   const openMenu = document.getElementById('open-menu');
   const closeMenu = document.getElementById('close-menu');
   const sideMenu = document.getElementById('side-menu');
+  const overlay = document.getElementById('menu-overlay');
 
+  // Abrir menú
   openMenu.addEventListener('click', () => {
     sideMenu.classList.add('active');
+    overlay.classList.add('active');
   });
 
+  // Cerrar con botón X
   closeMenu.addEventListener('click', () => {
     sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Cerrar haciendo clic fuera
+  overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
   });
 </script>
+
 
 
 
