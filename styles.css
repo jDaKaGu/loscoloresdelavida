@@ -599,3 +599,102 @@ header.site-header {
     padding: 8px 16px;
   }
 }
+
+/* Header superior */
+.main-header {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 9999;
+}
+
+/* Botón Donar */
+.donar-btn {
+  background: #ff4444;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Logo en el header */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo img {
+  height: 32px;
+}
+
+/* Botón hamburguesa */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+}
+
+/* Menú lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px; /* 👉 Se esconde fuera de pantalla */
+  width: 260px;  /* 👉 Menú más pequeño */
+  height: 100vh;
+  background: rgba(0,0,0,0.6); /* 👉 Semitransparente */
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.25);
+  transition: right 0.3s ease;
+}
+
+/* Menú cuando está visible */
+.side-menu.active {
+  right: 0;
+}
+
+/* Botón cerrar */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: white;
+  float: right;
+}
+
+/* Contenido dentro del menú */
+.menu-header {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-header img {
+  height: 40px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.side-menu li {
+  margin: 15px 0;
+}
+
+.side-menu a {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
