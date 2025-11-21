@@ -23,7 +23,7 @@ color:var(--text);
     background-size: cover;        /* la imagen cubre toda la pantalla */
     background-position: center;   /* centra la imagen */
     background-repeat: no-repeat;  /* evita que se repita */
-    background-attachment: fixed;  /* opcional: la imagen queda fija al hacer scroll */
+    background-attachment: scroll;  /* opcional: la imagen queda fija al hacer scroll */
     font-family: 'Inter', system-ui, sans-serif; /* mantiene tu tipografía */
 }
 .wrap{width:90%;max-width:var(--max-width);margin:0 auto;padding:36px 0}
