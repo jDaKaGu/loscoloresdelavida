@@ -36,34 +36,26 @@ color:var(--text);
 
 
 /* Header con degradado verde */
+/* ------------------------------ */
+/* HEADER - ESTILOS BASE (DESKTOP) */
+/* ------------------------------ */
+
 header.site-header {
   background: linear-gradient(90deg, #076b5a, #00b59c);
   padding: 10px 0;
 }
 
-/* Contenedor interno alineado */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+.header-inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 
-  .site-nav {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-/* Logo */
-.brand .logo-img {
-  width: 40px;
-  height: auto;
-}
-
-/* Logo + texto en línea */
+/* Logo y nombre */
 .brand {
   display: flex;
   align-items: center;
@@ -71,71 +63,39 @@ header.site-header {
   text-decoration: none;
 }
 
-/* Nombre de la fundación */
-.brand h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem; /* tamaño equilibrado */
-  margin: 0;
-  text-decoration: none;
-  color: white;
-  line-height: 1.1;
+.brand .logo-img {
+  width: 42px;
+  height: auto;
 }
 
-/* Botones más llamativos */
-.site-nav a {
-  display: inline-block;
-  padding: 6px 16px;
-  border-radius: 12px;
-  background-color: white;
-  color: #076b5a; /* coincide con el degradado */
+.brand h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: white;
   font-weight: 700;
+}
+
+/* Navegación */
+.site-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.site-nav a {
+  padding: 8px 18px;
+  background: white;
+  color: #076b5a;
+  border-radius: 12px;
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: 0.3s ease;
 }
 
 .site-nav a:hover {
-  background-color: #e0f2ef; /* hover suave */
+  background: #e0f2ef;
   color: #00b59c;
 }
-
-/* Responsive */
-@media (max-width: 992px) {
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .site-nav {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 10px;
-  }
-}
-
-/* Quitar subrayado del nombre de la fundación */
-.brand a, .brand a h1 {
-  text-decoration: none !important;
-  color: white; /* asegurar que el texto sea blanco */
-}
-
-/* Botones visibles y estilizados */
-.site-nav a {
-  padding: 6px 16px;
-  border-radius: 12px;
-  background-color: white;
-  color: #076b5a;
-  font-weight: 700;
-}
-
-.site-nav a:hover {
-  color: white;
-  background-color: rgba(0,0,0,0.2); /* semitransparente oscuro */
-  border-radius: 8px;
-}
-
 .hero-grid {
   display: flex;
   flex-wrap: wrap;
