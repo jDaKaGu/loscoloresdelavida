@@ -698,3 +698,127 @@ header.site-header {
   text-decoration: none;
 }
 
+/* HEADER */
+.main-header {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #076b5a, #00b59c);
+  z-index: 9999;
+}
+
+/* Sección izquierda: menú + logo */
+.left-zone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo img {
+  height: 32px;
+}
+
+/* Botón hamburguesa */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* BOTÓN DONAR (a la derecha) */
+.donar-btn {
+  background: #ff7a00; /* llamativo, contrasta perfecto con el verde */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.donar-btn:hover {
+  background: #ff9733;
+}
+
+/* MENÚ LATERAL IZQUIERDO */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px; /* escondido */
+  width: 260px;
+  height: 100vh;
+  background: rgba(0,0,0,0.55); /* semitransparente bonito */
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  transition: left 0.3s ease;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+}
+
+/* Al abrirse */
+.side-menu.active {
+  left: 0;
+}
+
+/* Botón cerrar */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: white;
+  float: right;
+  cursor: pointer;
+}
+
+/* Logo dentro del menú */
+.menu-header {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-header img {
+  height: 42px;
+}
+
+.menu-header span {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Items menú */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.side-menu li {
+  margin: 18px 0;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.2s;
+}
+
+.side-menu a:hover {
+  color: #d2fff7;
+}
