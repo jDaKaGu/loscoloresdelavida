@@ -1,704 +1,7 @@
-/* Minimalista, elegante y accesible */
-:root{
---bg:#fbfdfc;
---card:#ffffff;
---text:#0b1020;
---muted:#5b6770;
---primary:#076b5a; /* verde profundo */
---accent:#00b59c;
---radius:12px;
---max-width:1100px;
-}
+/* ==========================
+   HEADER GENERAL
+========================== */
 
-
-*{box-sizing:border-box}
-html,body{height:100%;}
-body{
-margin:0;
-font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-background:var(--bg);
-color:var(--text);
--webkit-font-smoothing:antialiased;
-    background-image: url('assets/0.jpg'); /* ruta de tu imagen */
-    background-size: cover;        /* la imagen cubre toda la pantalla */
-    background-position: center;   /* centra la imagen */
-    background-repeat: no-repeat;  /* evita que se repita */
-    background-attachment: scroll;  /* opcional: la imagen queda fija al hacer scroll */
-    font-family: 'Inter', system-ui, sans-serif; /* mantiene tu tipografía */
-}
-.wrap{width:90%;max-width:var(--max-width);margin:0 auto;padding:36px 0}
-
-
-/* Skip link */
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#111;color:#fff;border-radius:6px}
-
-
-
-/* Header con degradado verde */
-/* ------------------------------ */
-/* HEADER - ESTILOS BASE (DESKTOP) */
-/* ------------------------------ */
-
-header.site-header {
-  background: linear-gradient(90deg, #076b5a, #00b59c);
-  padding: 10px 0;
-}
-
-.header-inner {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Logo y nombre */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.brand .logo-img {
-  width: 42px;
-  height: auto;
-}
-
-.brand h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.4rem;
-  margin: 0;
-  color: white;
-  font-weight: 700;
-}
-
-/* Navegación */
-.site-nav {
-  display: flex;
-  gap: 12px;
-}
-
-.site-nav a {
-  padding: 8px 18px;
-  background: white;
-  color: #076b5a;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.3s ease;
-}
-
-.site-nav a:hover {
-  background: #e0f2ef;
-  color: #00b59c;
-}
-
-/* --- Estilos para el menú hamburguesa --- */
-
-/* Ocultar el checkbox visualmente, pero dejarlo funcional */
-.menu-toggle {
-  display: none;
-}
-
-/* Icono hamburguesa */
-.menu-icon {
-  display: none; /* se mostrará solo en móvil */
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-icon .navicon {
-  background: white;
-  display: block;
-  height: 2px;
-  width: 24px;
-  position: relative;
-  transition: background 0.3s ease;
-}
-
-.menu-icon .navicon::before,
-.menu-icon .navicon::after {
-  content: '';
-  background: white;
-  display: block;
-  height: 2px;
-  width: 24px;
-  position: absolute;
-  transition: transform 0.3s ease;
-}
-
-.menu-icon .navicon::before {
-  top: -8px;
-}
-
-.menu-icon .navicon::after {
-  top: 8px;
-}
-
-/* Cuando el checkbox está marcado: animar icono */
-.menu-toggle:checked + .menu-icon .navicon {
-  background: transparent;
-}
-
-.menu-toggle:checked + .menu-icon .navicon::before {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-
-.menu-toggle:checked + .menu-icon .navicon::after {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
-
-/* Menú de navegación - versión oculta en móvil por defecto */
-.site-nav {
-  display: flex;
-  gap: 12px;
-}
-
-/* Estilos responsive para móvil */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .site-nav {
-    position: absolute;
-    top: 100%; /* justo debajo del header */
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #076b5a, #00b59c);
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease;
-  }
-
-  .site-nav a {
-    padding: 12px 20px;
-    color: white;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-  }
-
-  /* Cuando esté activo (checkbox marcado), expandir menú */
-  .menu-toggle:checked ~ .site-nav {
-    max-height: 300px; /* ajusta según la cantidad de links, o usa “none” */
-  }
-}
-
-/* Grupo izquierdo */
-.left-group {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Botón Donar */
-.donate-btn {
-  background: white;
-  color: #076b5a;
-  padding: 6px 16px;
-  font-weight: 700;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.donate-btn:hover {
-  background: #e0f2ef;
-  color: #00b59c;
-}
-
-.hero-grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 550px;
-}
-
-@media (max-width: 768px) {
-  .hero-grid {
-    flex-direction: column;
-    height: auto;
-  }
-  .hero-left, .hero-right {
-    height: auto;
-  }
-}
-
-
-/* Mitad izquierda */
-.hero-left {
-  flex: 1;
-  background: linear-gradient(90deg, #076b5a, #dcea7d);
-  color: #0b1020;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 50px 40px;
-  text-align: left;
-}
-
-.hero-left h2,
-.hero-left .lead {
-  color: #0b1020; /* azul muy oscuro / casi negro */
-}
-
-.hero-left .kicker {
-  color: #ffffff; 
-  font-weight: 600;
-  text-decoration: none;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.hero-ctas {
-  margin-top: 30px; 
-}
-
-/* Botones */
-.hero-ctas a.btn {
-  margin-right: 15px;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-decoration: none;
-}
-
-.hero-ctas a.btn.primary {
-  background-color: white;
-  color: #076b5a;
-}
-
-.hero-ctas a.btn.primary:hover {
-  background-color: #e0f2ef;
-  color: #00b59c;
-}
-
-.hero-ctas a.btn.outline {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
-.hero-ctas a.btn.outline:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-
-/* Mitad derecha */
-.hero-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.proyectos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-/* Tarjeta de actividad */
-.proyecto {
-  background-color: var(--card);
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Imagen / slider dentro de la tarjeta */
-.proyecto-slider {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.proyecto-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: none;
-}
-
-.proyecto-slider img:hover {
-  transform: none;
-}
-
-/* Texto de la tarjeta */
-.proyecto h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.proyecto-info p {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Responsive */
-/* --- Móviles pequeños (0–480px) --- */
-@media (max-width: 480px) {
-
-  .hero-grid {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-  }
-
-  .hero-left {
-    width: 100%;
-    padding: 22px 18px;
-    text-align: left;
-  }
-
-  .hero-left h2 {
-    font-size: 1.55rem;
-    line-height: 1.25;
-  }
-
-  .hero-left .lead {
-    font-size: 1rem;
-    line-height: 1.45;
-  }
-
-  .hero-right {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-photo {
-    width: 100%;
-    height: 260px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .hero-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .hero-ctas a.btn {
-    width: auto;
-    padding: 12px 20px;
-  }
-}
-
-
-/* --- Tablets y pantallas medianas (481–992px) --- */
-@media (max-width: 992px) {
-
-  .hero-grid {
-    flex-direction: column;
-    height: auto;
-    gap: 35px;
-  }
-
-  .hero-left {
-    width: 100%;
-    padding: 35px 20px;
-    text-align: center;
-  }
-
-  .hero-left h2 {
-    font-size: 1.9rem;
-    line-height: 1.25;
-  }
-
-  .hero-left .lead {
-    font-size: 1.08rem;
-    line-height: 1.5;
-  }
-
-  .hero-right {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero-photo {
-    width: 95%;
-    max-width: 450px;
-    height: 320px;
-    margin: 0 auto;
-  }
-
-  .hero-ctas {
-    justify-content: center;
-  }
-
-  .hero-ctas a.btn {
-    margin: 0;
-  }
-}
-/* --- FIX DEL HEADER EN MÓVILES --- */
-@media (max-width: 768px) {
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .site-nav {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .site-nav a {
-    font-size: 0.95rem;
-    padding: 8px 14px;
-    border-radius: 10px;
-  }
-}
-
-/* ------------------------------ */
-/* HEADER BASE */
-/* ------------------------------ */
-
-.site-header {
-  background: linear-gradient(90deg, #076b5a, #00b59c);
-  padding: 10px 0;
-  width: 100%;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-}
-
-/* Logo */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: white;
-}
-
-.brand .logo-img {
-  width: 40px;
-  height: auto;
-}
-
-.brand h1 {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-}
-
-/* ------------------------------ */
-/* MENÚ */
-/* ------------------------------ */
-
-.site-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100vh;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  padding: 50px 20px;
-  gap: 20px;
-  transition: right 0.35s ease-in-out;
-  box-shadow: -4px 0 15px rgba(0,0,0,0.2);
-}
-
-.site-nav a {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #076b5a;
-}
-
-.site-nav a:hover {
-  color: #00b59c;
-}
-
-/* Menú abierto */
-.site-nav.open {
-  right: 0;
-}
-
-/* ------------------------------ */
-/* BOTÓN HAMBURGUESA */
-/* ------------------------------ */
-
-.menu-toggle {
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 4px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-
-/* Animación X */
-.menu-toggle.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-  .left-group {
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .donate-btn {
-    padding: 8px 16px;
-  }
-}
-
-/* Header superior */
-.main-header {
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: white;
-  z-index: 9999;
-}
-
-/* Botón Donar */
-.donar-btn {
-  background: #ff4444;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-/* Logo en el header */
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.header-logo img {
-  height: 32px;
-}
-
-/* Botón hamburguesa */
-.menu-btn {
-  background: none;
-  border: none;
-  font-size: 28px;
-}
-
-/* Menú lateral */
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: -260px; /* 👉 Se esconde fuera de pantalla */
-  width: 260px;  /* 👉 Menú más pequeño */
-  height: 100vh;
-  background: rgba(0,0,0,0.6); /* 👉 Semitransparente */
-  backdrop-filter: blur(4px);
-  padding: 20px;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.25);
-  transition: right 0.3s ease;
-}
-
-/* Menú cuando está visible */
-.side-menu.active {
-  right: 0;
-}
-
-/* Botón cerrar */
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 32px;
-  color: white;
-  float: right;
-}
-
-/* Contenido dentro del menú */
-.menu-header {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.menu-header img {
-  height: 40px;
-}
-
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-.side-menu li {
-  margin: 15px 0;
-}
-
-.side-menu a {
-  color: white;
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-/* HEADER */
 .main-header {
   width: 100%;
   padding: 10px 20px;
@@ -719,18 +22,7 @@ header.site-header {
   gap: 10px;
 }
 
-/* Logo */
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.header-logo img {
-  height: 32px;
-}
-
-/* Botón hamburguesa */
+/* Botón menú */
 .menu-btn {
   background: none;
   border: none;
@@ -739,36 +31,55 @@ header.site-header {
   cursor: pointer;
 }
 
-/* BOTÓN DONAR (a la derecha) */
+/* Logo + nombre */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo img {
+  height: 34px;
+}
+
+.header-logo span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white; /* más visible */
+  line-height: 1;
+}
+
+/* Botón DONAR (derecha) */
 .donar-btn {
-  background: #ff7a00; /* llamativo, contrasta perfecto con el verde */
+  background: #ff7a00;
   color: white;
   padding: 8px 15px;
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .donar-btn:hover {
   background: #ff9733;
 }
 
-/* MENÚ LATERAL IZQUIERDO */
+/* ==========================
+   MENÚ LATERAL (IZQUIERDA)
+========================== */
+
 .side-menu {
   position: fixed;
   top: 0;
-  left: -260px; /* escondido */
-  width: 260px;
+  left: -270px;
+  width: 270px;
   height: 100vh;
-  background: rgba(0,0,0,0.55); /* semitransparente bonito */
-  backdrop-filter: blur(6px);
-  padding: 20px;
+  background: #003c32; /* CONTRASTE profesional */
+  padding: 25px 20px;
   transition: left 0.3s ease;
-  box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+  z-index: 99999;
 }
 
-/* Al abrirse */
 .side-menu.active {
   left: 0;
 }
@@ -779,33 +90,33 @@ header.site-header {
   border: none;
   font-size: 32px;
   color: white;
-  float: right;
   cursor: pointer;
+  float: right;
 }
 
-/* Logo dentro del menú */
+/* Header dentro del menú */
 .menu-header {
-  margin-top: 40px;
+  margin: 45px 0 25px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .menu-header img {
-  height: 42px;
+  height: 40px;
 }
 
 .menu-header span {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
 }
 
-/* Items menú */
+/* Items */
 .side-menu ul {
   list-style: none;
   padding: 0;
-  margin-top: 25px;
+  margin: 0;
 }
 
 .side-menu li {
@@ -813,12 +124,31 @@ header.site-header {
 }
 
 .side-menu a {
-  color: white;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: 0.2s;
+  color: #d7fff6;
+  transition: 0.2s ease;
 }
 
 .side-menu a:hover {
-  color: #d2fff7;
+  color: #ffffff;
+}
+
+/* ==========================
+   OVERLAY PARA CERRAR AL HACER CLIC FUERA
+========================== */
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 99998;
+}
+
+.menu-overlay.active {
+  display: block;
 }
