@@ -91,20 +91,27 @@
 </footer>
   
 <script>
-const menuIcon = document.querySelector(".menu-icon");
-const nav = document.querySelector("nav");
-const overlay = document.querySelector(".menu-overlay");
+const openBtn = document.getElementById('open-menu');
+const closeBtn = document.getElementById('close-menu');
+const sideMenu = document.getElementById('side-menu');
+const overlay = document.getElementById('menu-overlay');
 
-menuIcon.addEventListener("click", () => {
-  nav.classList.toggle("open");
-  overlay.classList.toggle("active");
+openBtn.addEventListener('click', () => {
+  sideMenu.classList.add('active');
+  overlay.classList.add('active');
 });
 
-overlay.addEventListener("click", () => {
-  nav.classList.remove("open");
-  overlay.classList.remove("active");
+closeBtn.addEventListener('click', () => {
+  sideMenu.classList.remove('active');
+  overlay.classList.remove('active');
 });
-</script>
+
+overlay.addEventListener('click', () => {
+  sideMenu.classList.remove('active');
+  overlay.classList.remove('active');
+});
+</script
+  
 <div class="menu-overlay"></div>
 </body>
 </html>
