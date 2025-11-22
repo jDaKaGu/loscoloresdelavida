@@ -117,7 +117,7 @@ nav ul li a:hover {
   height: 100%;
   background: rgba(0,0,0,0.4);
   display: none;
-  z-index: 995; /* Menor que el menú, mayor que otros elementos */
+  z-index: 500;
 }
 
 .menu-overlay.active {
@@ -227,13 +227,23 @@ footer p {
 }
 
 .side-menu {
-  z-index: 996; /* Reajusta para que esté encima del overlay */
-  left: -260px;
+  position: fixed;
+  top: 0;
+  left: -260px; /* escondido al inicio */
+  width: 260px;
+  height: 100vh;
+  background: rgba(0, 60, 50, 0.95);
+  padding: 20px;
   transition: left 0.3s ease;
+  z-index: 600; /* por encima del overlay */
+}
+
+.side-menu.active {
+  left: 0;
 }
 
 .main-header {
-  z-index: 1000;
+  z-index: 700; /* el header está encima del menú si quieres, o puedes bajar esto */
 }
 
 /* Ajuste para el logo del header */
