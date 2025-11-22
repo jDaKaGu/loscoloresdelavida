@@ -235,3 +235,37 @@ footer p {
 .main-header {
   z-index: 1000;
 }
+
+/* Ajuste para el logo del header */
+.left-zone .header-logo img {
+  height: 50px;            /* limita el alto del logo */
+  width: auto;             /* mantiene la proporción original */
+  object-fit: contain;     /* evita deformaciones */
+  display: block;
+}
+
+/* Ajuste para el logo dentro del menú lateral */
+.side-menu .menu-header img {
+  max-height: 45px;        /* límite de alto para que no crezca demasiado */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Asegurar que el contenedor del logo no crezca demasiado */
+.header-logo {
+  display: flex;
+  align-items: center;
+  /* asegurar que su altura no exceda la del header */
+  max-height: 60px;
+}
+
+/* Si quieres, puedes hacer un logo diferente para móviles */
+@media (max-width: 768px) {
+  .left-zone .header-logo img {
+    height: 40px;
+  }
+  .side-menu .menu-header img {
+    max-height: 40px;
+  }
+}
