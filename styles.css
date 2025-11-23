@@ -108,17 +108,17 @@ nav ul li a:hover {
   }
 }
 
-/* Para cerrar menú al hacer clic fuera */
+/* Overlay */
 .menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.45);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: opacity .3s ease;
   z-index: 900;
 }
 
@@ -234,11 +234,11 @@ footer p {
   top: 0;
   left: -260px;
   width: 260px;
-  height: 100%;
-  background: rgba(0, 60, 50, 0.95);
+  height: 100vh;
+  background: rgba(0,60,50,0.95);
   padding: 20px;
-  transition: left 0.3s ease;
-  z-index: 950; /* debe estar por encima del overlay */
+  transition: left .3s ease;
+  z-index: 950;
 }
 
 .side-menu.active {
