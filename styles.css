@@ -32,7 +32,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
 }
 
 header .logo {
@@ -251,7 +250,7 @@ footer p {
   color: white;
   cursor: pointer;
   position: relative;
-  z-index: 960;
+  z-index: 998;
 }
 
 .main-header {
@@ -259,7 +258,7 @@ footer p {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 997;
+  z-index: 999;
 }
 
 /* Ajuste para el logo del header */
