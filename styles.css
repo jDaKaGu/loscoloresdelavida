@@ -182,7 +182,7 @@ a { text-decoration: none; color: inherit; }
 ------------------------------------------------------- */
 
 .hero-fixed {
-  margin-top: 70px; /* compensar header fijo */
+  margin-top: 40px;
 }
 
 .hero {
