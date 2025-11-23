@@ -110,6 +110,20 @@ overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   overlay.classList.remove('active');
 });
+  const elements = document.querySelectorAll('.fade-up');
+
+  function checkFadeUp() {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkFadeUp);
+  window.addEventListener('load', checkFadeUp);
+
 </script>
 </body>
 </html>
