@@ -193,8 +193,10 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  padding-top: 70px; /* reemplaza margin-top */
+  margin-top: 0;
 }
+
 
 .hero-grid {
   width: 100%;
