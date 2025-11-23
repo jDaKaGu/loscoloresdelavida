@@ -63,9 +63,12 @@ a { text-decoration: none; color: inherit; }
   align-items: center;
   gap: 10px;
 }
-   
-header .logo img {
+
+.header-logo img {
   height: 55px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .header-logo span {
