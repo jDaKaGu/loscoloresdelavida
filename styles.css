@@ -523,3 +523,82 @@ footer p {
   line-height: 1.65;
 }
 
+/* -------------------------------------------------------
+   FONDO ABSTRACTO PARA QUIÉNES SOMOS (compatible con loader)
+------------------------------------------------------- */
+
+section[data-section="about"] {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%);
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+  overflow: hidden;
+  border-radius: 0 0 60px 60px;
+}
+
+/* Forma SVG 1 */
+section[data-section="about"]::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 260px;
+  height: 260px;
+  background: url("data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
+    <circle cx='150' cy='150' r='150' fill='%23f4c431' fill-opacity='0.22'/>
+  </svg>") no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+/* Forma SVG 2 */
+section[data-section="about"]::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: url("data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
+    <circle cx='150' cy='150' r='150' fill='%230b2a35' fill-opacity='0.15'/>
+  </svg>") no-repeat;
+  background-size: contain;
+  z-index: 0;
+}
+
+/* Elevar las tarjetas */
+section[data-section="about"] .card-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Modernización de tarjetas */
+section[data-section="about"] .card {
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  padding: 32px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+section[data-section="about"] .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.16);
+}
+
+section[data-section="about"] .card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #0b2a35;
+  font-weight: 700;
+}
+
+section[data-section="about"] .card p {
+  color: #333;
+  line-height: 1.65;
+}
+
+
