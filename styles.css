@@ -390,6 +390,15 @@ section {
   color: #0b2a35;
 }
 
+.section-subtitle {
+  text-align: center;
+  max-width: 800px;
+  margin: -20px auto 40px auto;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
 /* -------------------------------------------------------
    CARDS GENERALES
 ------------------------------------------------------- */
@@ -441,85 +450,103 @@ footer p {
   opacity: .85;
 }
 /* -------------------------------------------------------
-   SECCIÓN QUIÉNES SOMOS — Fondo moderno + tarjetas
+   SECCIÓN "NUESTRO PROPÓSITO" — Fondo abstracto moderno
 ------------------------------------------------------- */
 
 section[data-section="about"] {
   position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #eef5ff 100%);
   padding: 120px 20px;
+  background: #fdfdfd;
   overflow: hidden;
-  border-radius: 0 0 60px 60px;
 }
 
-/* Fondo abstracto 1 (amarillo suave) */
+/* Forma suave arriba izquierda */
 section[data-section="about"]::before {
   content: "";
   position: absolute;
-  top: -80px;
-  left: -80px;
-  width: 300px;
-  height: 300px;
-  background: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>\
-    <circle cx='150' cy='150' r='150' fill='%23f4c431' fill-opacity='0.20'/>\
-  </svg>") no-repeat;
+  top: -120px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: url("data:image/svg+xml;utf8,
+    <svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
+      <path d='M421 80Q470 150 430 230T320 360Q230 410 150 360T40 230Q10 150 60 80T200 20Q330 10 421 80Z'
+        fill='%23f4c431' fill-opacity='0.20'/>
+    </svg>") no-repeat;
   background-size: contain;
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* Fondo abstracto 2 (azul petróleo suave) */
+/* Forma suave abajo derecha */
 section[data-section="about"]::after {
   content: "";
   position: absolute;
-  bottom: -90px;
-  right: -90px;
-  width: 340px;
-  height: 340px;
-  background: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>\
-    <circle cx='150' cy='150' r='150' fill='%230b2a35' fill-opacity='0.12'/>\
-  </svg>") no-repeat;
+  bottom: -140px;
+  right: -140px;
+  width: 480px;
+  height: 480px;
+  background: url("data:image/svg+xml;utf8,
+    <svg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
+      <path d='M420 200Q420 300 350 350T200 420Q110 430 60 360T40 200Q40 110 110 60T260 40Q350 30 400 100T420 200Z'
+        fill='%230b2a35' fill-opacity='0.15'/>
+    </svg>") no-repeat;
   background-size: contain;
-  z-index: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* Contenedor elevado sobre el fondo */
-section[data-section="about"] .card-container {
+/* Elevar contenido */
+section[data-section="about"] > * {
   position: relative;
-  z-index: 2;
-  max-width: 1200px;
+  z-index: 5;
 }
 
-/* Tarjetas estilo moderno */
-section[data-section="about"] .card {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(6px);
-  border-radius: 20px;
-  padding: 36px;
-  border: none;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-  transition: transform .35s ease, box-shadow .35s ease;
+/* Ajuste de spacing */
+section[data-section="about"] .section-title {
+  margin-bottom: 20px;
 }
 
-/* Hover suave */
-section[data-section="about"] .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 36px rgba(0,0,0,0.18);
-}
-
-/* Títulos */
-section[data-section="about"] .card h3 {
-  font-size: 1.75rem;
-  font-weight: 800;
-  margin-bottom: 14px;
-  color: #0b2a35;
-}
-
-/* Texto */
-section[data-section="about"] .card p {
-  color: #333;
-  font-size: 1rem;
+.section-subtitle {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 50px auto;
+  font-size: 1.15rem;
+  color: #555;
   line-height: 1.65;
 }
 
+/* Tarjetas modernizadas */
+section[data-section="about"] .card-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 28px;
+}
+
+/* Tarjeta */
+section[data-section="about"] .card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+section[data-section="about"] .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.15);
+}
+
+section[data-section="about"] .card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 12px;
+  color: #0b2a35;
+}
+
+section[data-section="about"] .card p {
+  line-height: 1.65;
+  color: #333;
+}
