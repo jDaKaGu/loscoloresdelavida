@@ -393,14 +393,13 @@ section[data-section="about"]::after {
 
 /* Contenedor de tarjetas */
 section[data-section="about"] .card-container {
-  position: relative;
-  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   max-width: 1100px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas lado a lado */
-  gap: 28px;
 }
+
 
 /* Tarjetas */
 section[data-section="about"] .card {
@@ -434,13 +433,14 @@ section[data-section="about"] .card p {
 
 @media (max-width: 900px) {
   section[data-section="about"] .card-container {
-    grid-template-columns: 1fr 1fr; /* dos columnas en tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   section[data-section="about"] .card-container {
-    grid-template-columns: 1fr; /* una sola columna en móviles */
+    grid-template-columns: 1fr;
   }
 }
+
 
