@@ -333,6 +333,19 @@ footer {
 footer p {
   opacity: .85;
 }
+
+/* -------------------------------------------------------
+   TARJETAS GENERALES (base)
+------------------------------------------------------- */
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+  transition: .3s ease;
+}
+
 /* -------------------------------------------------------
    SECCIÓN: NUESTRO PROPÓSITO (Quiénes Somos + Misión + Visión)
    Fondo abstracto moderno + tarjetas elevadas
