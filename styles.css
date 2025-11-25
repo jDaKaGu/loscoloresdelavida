@@ -394,11 +394,11 @@ section[data-section="about"]::after {
 /* Contenedor de tarjetas */
 section[data-section="about"] .card-container {
   position: relative;
-  z-index: 5; /* sobre las formas */
+  z-index: 5;
   max-width: 1100px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas lado a lado */
   gap: 28px;
 }
 
@@ -431,3 +431,16 @@ section[data-section="about"] .card p {
   line-height: 1.7;
   color: #333;
 }
+
+@media (max-width: 900px) {
+  section[data-section="about"] .card-container {
+    grid-template-columns: 1fr 1fr; /* dos columnas en tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  section[data-section="about"] .card-container {
+    grid-template-columns: 1fr; /* una sola columna en móviles */
+  }
+}
+
