@@ -443,4 +443,14 @@ section[data-section="about"] .card p {
   }
 }
 
+/* -------------------------------------------------------
+   FIX: Contenedor con padding para secciones internas
+------------------------------------------------------- */
+
+.padded-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 
