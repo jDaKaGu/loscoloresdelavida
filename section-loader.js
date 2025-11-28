@@ -4,26 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(sec => {
     const name = sec.getAttribute("data-section");
+
     fetch(`sections/${name}.html`)
       .then(res => res.text())
       .then(html => {
+        // Limpia completamente el contenido previo
         sec.innerHTML = "";
+
+        // Inserta el HTML correctamente
         sec.insertAdjacentHTML("beforeend", html);
 
+        // Fade-in
         sec.classList.add("fade");
-
-        // Activa animación fade-in
         observer.observe(sec);
       })
       .catch(err => console.error("Error cargando sección:", name, err));
-  });
-});
-
-// Fade-in al hacer scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
   });
 });
