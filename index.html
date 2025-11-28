@@ -4,29 +4,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Fundación Los Colores de la Vida</title>
+
 <meta name="description" content="Fundación Los Colores de la Vida - proyectos sociales, comunidad, voluntariado y transparencia.">
 <meta name="author" content="Fundación Los Colores de la Vida">
 <meta name="theme-color" content="#40E0D0">
 
-<!-- Open Graph para redes sociales -->
+<!-- Open Graph -->
 <meta property="og:title" content="Fundación Los Colores de la Vida">
 <meta property="og:description" content="Proyectos sociales, comunidad, voluntariado y transparencia.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/colores_logo.svg">
 
-<link rel="stylesheet" href="styles.css?v=100">
+<!-- CSS con versión para evitar caché -->
+<link rel="stylesheet" href="styles.css?v=101">
+
 <script defer src="scripts.js"></script>
 <script defer src="section-loader.js"></script>
+
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
 <a class="skip-link" href="#main">Saltar al contenido principal</a>
 
-  <!-- Tu header -->
 <header class="main-header">
   <div class="left-zone">
     <button class="menu-btn" id="open-menu">&#9776;</button>
@@ -35,37 +37,39 @@
       <span>Los Colores de la Vida</span>
     </div>
   </div>
+
   <a href="#donaciones" class="donar-btn">Donar</a>
 </header>
 
-<!-- Overlay debe estar fuera del menú -->
+<!-- Overlay -->
 <div class="menu-overlay" id="menu-overlay"></div>
 
 <!-- Menú lateral -->
 <nav class="side-menu" id="side-menu">
   <button class="close-btn" id="close-menu">&times;</button>
+
   <div class="menu-header">
     <img src="assets/colores_logo.svg" alt="Logo">
     <span>Los Colores de la Vida</span>
   </div>
+
   <ul>
     <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#about">Quiénes Somos</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#equipo">Equipo</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#voluntarios">Voluntarios</a></li>
+    <li><a href="#transparencia">Transparencia</a></li>
+    <li><a href="#donaciones">Donaciones</a></li>
   </ul>
 </nav>
-
 
 <!-- SECCIONES DINÁMICAS -->
 <main id="main" role="main">
 
-  <section data-section="hero">
-    <!-- Contenido dinámico cargado con JS -->
-  </section>
+  <section data-section="hero"></section>
 
   <section data-section="about">
-    <p>Cargando...</p> <!-- fallback -->
+    <p>Cargando...</p>
   </section>
 
   <section data-section="proyectos">
@@ -86,11 +90,12 @@
 
 </main>
 
-<footer data-section="footer" role="contentinfo">
+<footer data-section="footer">
   <p>&copy; 2025 Fundación Los Colores de la Vida. Todos los derechos reservados.</p>
 </footer>
-  
+
 <script>
+/* Menú */
 const openBtn = document.getElementById('open-menu');
 const closeBtn = document.getElementById('close-menu');
 const sideMenu = document.getElementById('side-menu');
@@ -110,21 +115,7 @@ overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   overlay.classList.remove('active');
 });
-  const elements = document.querySelectorAll('.fade-up');
-
-  function checkFadeUp() {
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', checkFadeUp);
-  window.addEventListener('load', checkFadeUp);
-
 </script>
+
 </body>
 </html>
-
