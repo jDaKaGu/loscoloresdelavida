@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`sections/${name}.html`)
       .then(res => res.text())
       .then(html => {
-        sec.innerHTML = html;
+        sec.innerHTML = "";
+        sec.insertAdjacentHTML("beforeend", html);
+
         sec.classList.add("fade");
 
         // Activa animación fade-in
