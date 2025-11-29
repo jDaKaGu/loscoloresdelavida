@@ -1,6 +1,17 @@
-/* -------------------------------------------------------
-   RESET & BASE
-------------------------------------------------------- */
+/* ===================================================================
+   RESET + VARIABLES
+=================================================================== */
+:root {
+  --color-primary: #0b2a35;
+  --color-accent: #ffcc33;
+  --color-bg: #f4f4f4;
+  --color-dark: #062028;
+
+  --radius: 14px;
+  --transition: .25s ease;
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,28 +22,37 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: #f4f4f4;
+  background: var(--color-bg);
   color: #333;
-  line-height: 1.5;
 }
 
-a { text-decoration: none; color: inherit; }
+/* Quitar estilo predeterminado a enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* -------------------------------------------------------
-   HEADER + BOTÓN DONAR + MENÚ
-------------------------------------------------------- */
+/* Contenedores globales */
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
 
+/* ===================================================================
+   HEADER
+=================================================================== */
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
-  background: #0b2a35;     /* Azul petróleo oscuro */
+  background: var(--color-primary);
   padding: 0 22px;
   display: flex;
   justify-content: space-between;
@@ -40,14 +60,12 @@ a { text-decoration: none; color: inherit; }
   z-index: 999;
 }
 
-/* Logo + menú */
 .left-zone {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-   
 /* Botón menú */
 .menu-btn {
   font-size: 32px;
@@ -57,7 +75,7 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
 }
 
-/* Logo en el header */
+/* Logo */
 .header-logo {
   display: flex;
   align-items: center;
@@ -66,9 +84,6 @@ a { text-decoration: none; color: inherit; }
 
 .header-logo img {
   height: 55px;
-  width: auto;
-  object-fit: contain;
-  display: block;
 }
 
 .header-logo span {
@@ -79,52 +94,51 @@ a { text-decoration: none; color: inherit; }
 
 /* Botón DONAR */
 .donar-btn {
-  background: #ffcc33; /* amarillo cálido */
+  background: var(--color-accent);
   padding: 10px 18px;
   font-weight: 700;
-  color: #0b2a35;
+  color: var(--color-primary);
   border-radius: 6px;
-  transition: .3s;
+  transition: var(--transition);
 }
 
 .donar-btn:hover {
   background: #ffe07a;
 }
 
-/* -------------------------------------------------------
+/* ===================================================================
    MENÚ LATERAL
-------------------------------------------------------- */
-
+=================================================================== */
 .side-menu {
   position: fixed;
   top: 0;
   left: -270px;
   width: 260px;
   height: 100vh;
-  background: rgba(0, 60, 50, 0.92);
+  background: rgba(10, 45, 50, 0.82);
   padding: 25px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  transition: .3s ease;
+  transition: var(--transition);
   z-index: 998;
+  backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(255,255,255,0.15);
 }
 
 .side-menu.active {
   left: 0;
 }
 
-/* Botón cerrar */
 .close-btn {
   align-self: flex-end;
-  background: none;
-  border: none;
   font-size: 34px;
   color: white;
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-/* Encabezado del menú */
 .menu-header {
   display: flex;
   align-items: center;
@@ -133,7 +147,6 @@ a { text-decoration: none; color: inherit; }
 
 .menu-header img {
   max-height: 45px;
-  width: auto;
 }
 
 .menu-header span {
@@ -142,7 +155,6 @@ a { text-decoration: none; color: inherit; }
   color: white;
 }
 
-/* Enlaces del menú */
 .side-menu ul {
   list-style: none;
   display: flex;
@@ -153,14 +165,14 @@ a { text-decoration: none; color: inherit; }
 .side-menu ul li a {
   color: white;
   font-size: 1.1rem;
-  transition: .3s;
+  transition: var(--transition);
 }
 
 .side-menu ul li a:hover {
   opacity: .7;
 }
 
-/* Overlay transparente */
+/* Overlay */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -170,7 +182,7 @@ a { text-decoration: none; color: inherit; }
   background: rgba(0,0,0,0.45);
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s ease;
+  transition: opacity var(--transition);
   z-index: 997;
 }
 
@@ -179,86 +191,74 @@ a { text-decoration: none; color: inherit; }
   visibility: visible;
 }
 
-/* -------------------------------------------------------
+/* ===================================================================
    HERO
-------------------------------------------------------- */
-
-.hero-fixed {
-  margin-top: 0px;
-}
-
+=================================================================== */
 .hero {
-  width: 100%;
+  width: min(1200px, 92%);
   min-height: 85vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding-top: 70px; /* reemplaza margin-top */
-  margin-top: 0;
+  align-items: center;
+  padding-top: 70px;
+  margin: auto;
 }
-
 
 .hero-grid {
-  width: 100%;
-  max-width: 1300px;
   display: flex;
-  align-items: stretch;
-  justify-content: center;
   gap: 20px;
+  width: 100%;
 }
 
-/* Mitad izquierda (texto) */
 .hero-left {
   flex: 1;
   padding: 40px;
   color: white;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
   background: linear-gradient(
     135deg,
     #0a3b41 0%,
     #0a4b53 35%,
     #f4c431 100%
   );
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* Alinea y hace consistente la altura */
-  gap: 20px;
-  border-radius: 14px;
 }
-
 
 .hero-left .kicker {
   font-size: 0.95rem;
   font-weight: 600;
-  opacity: 0.9;
+  opacity: .9;
 }
 
 .hero-left h2 {
   font-size: 2.8rem;
   line-height: 1.2;
-  max-width: 500px;
 }
 
 .hero-left .lead {
   max-width: 500px;
   font-size: 1.1rem;
-  opacity: 0.95;
+  opacity: .95;
 }
 
-/* CTA */
 .hero-ctas {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
 }
 
 .btn {
   padding: 12px 22px;
   font-weight: 700;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .btn.primary {
-  background: #0b2a35;
+  background: var(--color-primary);
   color: white;
 }
 
@@ -267,28 +267,18 @@ a { text-decoration: none; color: inherit; }
   color: white;
 }
 
-.hero-left,
 .hero-right {
   flex: 1;
   display: flex;
-}
-
-
-/* Mitad derecha (imagen) */
-.hero-right {
-  flex: 1;
-  padding: 0;              /* Para que coincida con la altura del lado izquierdo */
-  display: flex;           /* Para que el card llene la columna */
-  align-items: stretch;    /* Asegura igual altura */
+  align-items: stretch;
 }
 
 .hero-card {
-  flex: 1;                 /* Ocupar 100% del alto disponible */
+  flex: 1;
   width: 100%;
-  height: 100%;
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow);
 }
 
 .hero-photo {
@@ -298,14 +288,14 @@ a { text-decoration: none; color: inherit; }
   background-position: center;
 }
 
-
-/* Responsividad hero */
+/* RESPONSIVE HERO */
 @media (max-width: 992px) {
   .hero-grid {
     flex-direction: column;
   }
 
-  .hero-left, .hero-right {
+  .hero-left,
+  .hero-right {
     width: 100%;
     padding: 28px;
   }
@@ -319,12 +309,11 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
-/* -------------------------------------------------------
+/* ===================================================================
    FOOTER
-------------------------------------------------------- */
-
+=================================================================== */
 footer {
-  background: #0b2a35;
+  background: var(--color-primary);
   color: white;
   text-align: center;
   padding: 45px 20px;
@@ -334,22 +323,20 @@ footer p {
   opacity: .85;
 }
 
-/* -------------------------------------------------------
-   TARJETAS GENERALES (base)
-------------------------------------------------------- */
-
+/* ===================================================================
+   TARJETAS GENERALES
+=================================================================== */
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius);
   padding: 20px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-  transition: .3s ease;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
-/* -------------------------------------------------------
-   SECCIÓN: NUESTRO PROPÓSITO (Quiénes Somos + Misión + Visión)
-   Fondo abstracto moderno + tarjetas elevadas
-------------------------------------------------------- */
+/* ===================================================================
+   SECCIÓN ABOUT (Quiénes somos)
+=================================================================== */
 
 section[data-section="about"] {
   position: relative;
@@ -359,7 +346,6 @@ section[data-section="about"] {
   overflow: hidden;
 }
 
-/* Forma abstracta superior izquierda */
 section[data-section="about"]::before {
   content: "";
   position: absolute;
@@ -367,15 +353,10 @@ section[data-section="about"]::before {
   left: -70px;
   width: 260px;
   height: 260px;
-  background: url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
-      <circle cx='150' cy='150' r='150' fill='%23f4c431' fill-opacity='0.22'/>
-    </svg>") no-repeat center;
-  background-size: contain;
+  background: radial-gradient(circle, #f4c43144, transparent);
   z-index: 1;
 }
 
-/* Forma abstracta inferior derecha */
 section[data-section="about"]::after {
   content: "";
   position: absolute;
@@ -383,52 +364,40 @@ section[data-section="about"]::after {
   right: -80px;
   width: 300px;
   height: 300px;
-  background: url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'>
-      <circle cx='150' cy='150' r='150' fill='%230b2a35' fill-opacity='0.15'/>
-    </svg>") no-repeat center;
-  background-size: contain;
+  background: radial-gradient(circle, #0b2a3533, transparent);
   z-index: 1;
 }
 
-/* Contenedor de tarjetas */
 section[data-section="about"] .card-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   max-width: 1100px;
   margin: auto;
 }
 
-
-/* Tarjetas */
 section[data-section="about"] .card {
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(5px);
   padding: 32px;
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform .35s ease, box-shadow .35s ease;
+  box-shadow: var(--shadow);
+  transition: transform .30s ease;
 }
 
 section[data-section="about"] .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 18px 36px rgba(0,0,0,0.14);
 }
 
-/* Títulos de tarjetas */
 section[data-section="about"] .card h3 {
   font-size: 1.7rem;
   margin-bottom: 14px;
   font-weight: 700;
-  color: #0b2a35;
+  color: var(--color-primary);
 }
 
-/* Párrafos */
 section[data-section="about"] .card p {
-  font-size: 1rem;
   line-height: 1.7;
-  color: #333;
 }
 
 @media (max-width: 900px) {
@@ -443,14 +412,11 @@ section[data-section="about"] .card p {
   }
 }
 
-/* -------------------------------------------------------
-   FIX: Contenedor con padding para secciones internas
-------------------------------------------------------- */
-
+/* ===================================================================
+   PADDING GLOBAL PARA SECCIONES
+=================================================================== */
 .padded-section {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 20px;
 }
-
-
