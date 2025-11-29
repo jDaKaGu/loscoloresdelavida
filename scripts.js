@@ -1,14 +1,27 @@
-// MENU MOBILE
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
-  const nav = document.querySelector(".nav-links");
+  const sideMenu = document.querySelector(".side-menu");
+  const closeBtn = document.querySelector(".close-btn");
+  const overlay = document.querySelector(".menu-overlay");
 
-  menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle("open");
-    nav.classList.toggle("active");
-    fetch(`/${section}.html`)
+  const links = document.querySelectorAll(".side-menu a");
 
+  function openMenu() {
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
+  }
+
+  function closeMenu() {
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
+  menuBtn.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", closeMenu);
+
+  links.forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 });
-
 
