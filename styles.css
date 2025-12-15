@@ -510,3 +510,63 @@ section[data-section="about"] .card p {
 .project-card p {
   font-size:16px;
 }
+
+
+/* ===================================================================
+   DONACIONES / QUIERO AYUDAR
+=================================================================== */
+.donaciones-section {
+  padding: 120px 0;
+  text-align: center;
+  background: linear-gradient(180deg, #fffaf0 0%, #fff3d4 100%);
+  border-radius: 60px 60px 0 0;
+}
+
+.donaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1100px;
+  margin: 60px auto 0;
+}
+
+.donacion-card {
+  background: white;
+  border-radius: 22px;
+  padding: 36px 28px;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.donacion-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+.donacion-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+}
+
+.donacion-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: .85;
+  margin-bottom: 25px;
+}
+
+.donacion-card.destacada {
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  color: #0b2a35;
+}
+
+.donacion-card.destacada h3 {
+  color: #0b2a35;
+}
+
+@media (max-width: 900px) {
+  .donaciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
