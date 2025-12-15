@@ -495,3 +495,18 @@ section[data-section="about"] .card p {
   }
 }
 
+
+.project-card img {
+  height:200px;
+  object-fit:cover;
+}
+
+.project-card h3 {
+  margin-top:16px;
+  font-size:22px;
+  color:#ff7a23;
+}
+
+.project-card p {
+  font-size:16px;
+}
