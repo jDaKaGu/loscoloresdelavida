@@ -623,3 +623,7 @@ section[data-section="about"] .card p {
 .transparency-list li {
   margin:12px 0;
 }
+
+section[id] {
+  scroll-margin-top: 90px;
+}
