@@ -700,4 +700,44 @@ section[data-section] {
   margin: 0; /* elimina dependencias ambiguas */
 }
 
+.volunteer-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.volunteer-cards .card {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.volunteer-cards .card:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.volunteer-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
+  padding: 18px 46px;
+
+  background: linear-gradient(135deg, #ff7a23, #ffb347);
+  color: #fff !important;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  border-radius: 999px;
+  box-shadow: 0 16px 36px rgba(255,122,35,.5);
+
+  text-decoration: none;
+}
+
+
+
 
