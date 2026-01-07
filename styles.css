@@ -718,6 +718,9 @@ section[data-section] {
   align-items: center;
 }
 
+vol-button {
+  text-align: center;
+   }
 .volunteer-btn {
   display: inline-flex !important;
   align-items: center;
