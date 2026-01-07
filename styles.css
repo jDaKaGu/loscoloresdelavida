@@ -258,6 +258,25 @@ a {
   color: white;
 }
 
+.btn-ayudar {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 16px 36px;
+  background-color: #ffc107; /* amarillo CTA */
+  color: #0b2d3a;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+
+.btn-ayudar:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.2);
+}
+
 .hero-right {
   flex: 1;
   display: flex;
@@ -275,6 +294,10 @@ a {
   height: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.hero a.btn-ayudar {
+  color: #0b2d3a;
 }
 
 @media (max-width: 992px) {
