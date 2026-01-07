@@ -585,6 +585,7 @@ section[data-section="about"] .card p {
 
 .volunteer-section {
   padding: 120px 40px;
+  padding-bottom: 140px;
   margin-top: 80px;
   background: #ffffff;
   text-align: center;
@@ -647,5 +648,6 @@ section[id],
 section[data-section] {
   scroll-margin-top: 90px; /* header (70px) + aire visual */
 }
+
 
 
