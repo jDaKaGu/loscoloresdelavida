@@ -1,9 +1,7 @@
-// Cargar secciones dinámicamente
 document.addEventListener("DOMContentLoaded", () => {
 
   const sections = document.querySelectorAll("[data-section]");
- 
-  // Observer para animación fade-in
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -12,16 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.2 });
 
-  sections.forEach(sec => {
-    const name = sec.getAttribute("data-section");
+  sections.forEach(section => {
+    const name = section.dataset.section;
 
     fetch(`sections/${name}.html`)
-      .then(res => res.text())
-      .then(html => {
-        sec.innerHTML = "";
-        sec.insertAdjacentHTML("beforeend", html);
-        observer.observe(sec);
+      .then(res => {
+        if (!res.ok) throw new Error(`No se pudo cargar ${name}`);
+        return res.text();
       })
-      .catch(err => console.error("Error cargando sección:", name, err));
+      .then(html => {
+        section.innerHTML = html;
+        observer.observe(section);
+      })
+      .catch(err => {
+        console.error(err);
+        section.innerHTML = "<p>Error cargando contenido.</p>";
+      });
   });
+
 });
