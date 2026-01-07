@@ -2,7 +2,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const sections = document.querySelectorAll("[data-section]");
-
+  loadSection('voluntariado.html');
+  loadSection('donaciones.html');
+ 
   // Observer para animación fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
