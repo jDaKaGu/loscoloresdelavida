@@ -27,6 +27,8 @@ body {
   font-family:"Montserrat",sans-serif;
   background:var(--bg);
   color:#333;
+  font-weight:400;
+  line-height:1.6;
 }
 
 a { text-decoration:none; color:inherit; }
@@ -37,6 +39,52 @@ a { text-decoration:none; color:inherit; }
   padding: 4rem 1.5rem;
 }
 
+/* ==================================================
+NAVEGACIÓN Y BOTONES
+================================================== */
+
+.main-header,
+.side-menu,
+.btn,
+.donar-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.side-menu ul li a {
+  color: #ffffff;
+  font-size: 1.05rem;
+  display: block;
+  padding: 0.75rem 0;
+  opacity: 0.9;
+}
+
+.side-menu ul li a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.menu-btn {
+  font-size: 1.8rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 6px 10px;
+  transition: var(--transition);
+}
+
+.menu-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ==================================================
+TÍTULOS
+================================================== */
+h1, h2, h3, h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
 /* ==================================================
    HEADER + MENU
@@ -57,13 +105,28 @@ a { text-decoration:none; color:inherit; }
 
 }
 
-.menu-btn,
-.close-btn {
+.menu-btn, {
   background:none;
   border:none;
   font-size:1.6rem;
   color:#ffffff;
   cursor:pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.close-btn:hover {
+  color: var(--accent);
 }
 
 .side-menu {
