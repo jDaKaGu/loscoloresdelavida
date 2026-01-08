@@ -178,7 +178,7 @@ h1, h2, h3, h4 {
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   order: 2;
 }
 
