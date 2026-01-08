@@ -43,6 +43,30 @@ a { text-decoration:none; color:inherit; }
 /* ==================================================
 NAVEGACIÓN Y BOTONES
 ================================================== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+
+  background: #ffffff;
+  color: #0b2a35;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
 
 .main-header,
 .side-menu,
