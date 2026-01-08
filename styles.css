@@ -67,13 +67,16 @@ NAVEGACIÓN Y BOTONES
 }
 
 .menu-btn {
-  font-size: 1.8rem;
+  position: relative; /* O elimínala por completo */
+  background: transparent;
+  border: none;
   color: #ffffff;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  padding: 6px 10px;
-  transition: var(--transition);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
 
 .menu-btn:hover {
   background: rgba(255,255,255,0.2);
@@ -103,6 +106,7 @@ h1, h2, h3, h4 {
   align-items:center;
   z-index:1000   ;
   color: #ffffff;
+  gap: 1rem;
 }
 
 }
