@@ -193,19 +193,18 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
 }
 
 .menu-header img {
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: auto;
   object-fit: contain;
 }
 
 .menu-header span {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #ffffff;
+   display: none;
 }
   
 
