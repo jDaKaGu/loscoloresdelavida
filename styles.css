@@ -144,9 +144,7 @@ h1, h2, h3, h4 {
   gap: 1rem;
 }
 
-}
-
-.menu-btn, {
+.menu-btn {
   background:none;
   border:none;
   font-size:1.6rem;
@@ -227,7 +225,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   font-size: 1rem;
   white-space: nowrap;  
-  color: ffffff;
+  color: #ffffff;
 }
 
 .menu-header {
