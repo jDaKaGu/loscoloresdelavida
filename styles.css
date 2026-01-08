@@ -15,26 +15,7 @@
   padding:0;
   box-sizing:border-box;
 }
-
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.header-logo img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.header-logo span {
-  font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-}
-
-   
+ 
 
 html,body {
   width:100%;
@@ -56,6 +37,7 @@ a { text-decoration:none; color:inherit; }
   padding: 4rem 1.5rem;
 }
 
+
 /* ==================================================
    HEADER + MENU
 ================================================== */
@@ -70,14 +52,17 @@ a { text-decoration:none; color:inherit; }
   justify-content:space-between;
   align-items:center;
   z-index:999;
+  color: #ffffff;
+}
+
 }
 
 .menu-btn,
 .close-btn {
   background:none;
   border:none;
-  font-size:32px;
-  color:#fff;
+  font-size:1.6rem;
+  color:#ffffff;
   cursor:pointer;
 }
 
@@ -110,6 +95,56 @@ a { text-decoration:none; color:inherit; }
   opacity:1;
   visibility:visible;
 }
+
+.donar-btn {
+  color: #0b2a35;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.header-logo span {
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;  
+  color: ffffff;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.menu-header img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.menu-header span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+}
+  
 
 /* ==================================================
    HERO
@@ -265,6 +300,8 @@ section[data-section="about"] .card-container {
   padding:120px 20px;
   background:linear-gradient(180deg,#fffaf0,#fff3d4);
 }
+
+
 
 .don-container {
   max-width:1100px;
@@ -443,4 +480,34 @@ section[data-section] {
     height: 300px;
   }
 }
+/* ================================
+FOOTER
+=================================== */
+footer {
+  background-color: #0b2a35;
+  color: #ffffff;
+  padding: 4rem 1.5rem 2rem;
+}
 
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+footer a:hover {
+  opacity: 1;
+}
+
+footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
