@@ -25,38 +25,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.getElementById('projectsNext')?.addEventListener('click', () => {
-  document.getElementById('projectsTrack')
-    .scrollBy({ left: 320, behavior: 'smooth' });
-});
-
+document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById('projectsGrid');
   const nextBtn = document.getElementById('projectsNext');
 
+  if (!grid || !nextBtn) return;
+
+  // Flecha
   nextBtn.addEventListener('click', () => {
-    grid.scrollBy({
-      left: 320,
-      behavior: 'smooth'
-    });
+    grid.scrollBy({ left: 320, behavior: 'smooth' });
   });
- const slider = document.getElementById('projectsGrid');
+
+  // Drag con mouse
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  slider.addEventListener('mousedown', e => {
+  grid.addEventListener('mousedown', e => {
     isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
   });
 
-  slider.addEventListener('mouseleave', () => isDown = false);
-  slider.addEventListener('mouseup', () => isDown = false);
+  ['mouseleave', 'mouseup'].forEach(evt =>
+    grid.addEventListener(evt, () => isDown = false)
+  );
 
-  slider.addEventListener('mousemove', e => {
+  grid.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
+    const x = e.pageX - grid.offsetLeft;
     const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
+    grid.scrollLeft = scrollLeft - walk;
   });
+});
