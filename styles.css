@@ -379,6 +379,9 @@ section[data-section="about"] .card-container {
   overflow-x:auto;
   padding-bottom:20px;
   scroll-snap-type:x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
 }
 
 @media(max-width:900px){
@@ -392,6 +395,9 @@ section[data-section="about"] .card-container {
   background: #ccc;
   border-radius: 10px;
 }
+
+.projects-grid:active {
+   cursor: grabbing;
 
 /* ==================================================
    VOLUNTARIADO — FINAL
@@ -600,20 +606,38 @@ margin-bottom:120px;
   padding: 18px;
   flex-shrink: 0;
 }
+
+.projects-section {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
 .arrow {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -12;
   transform: translateY(-50%);
   background: #0f3d46;
   color: #fff;
   border: none;
-  font-size: 32px;
-  width: 48px;
-  height: 48px;
+  font-size: 28px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.arrow:hover {
+  background: #13606c;
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none; /* en móvil se usa el dedo */
+  }
 }
 
 /* ===============================
