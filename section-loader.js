@@ -1,32 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const sections = document.querySelectorAll("[data-section]");
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
 
   sections.forEach(section => {
     const name = section.dataset.section;
 
     fetch(`sections/${name}.html`)
       .then(res => {
-        if (!res.ok) {
-          throw new Error(`No se pudo cargar la sección: ${name}`);
-        }
+        if (!res.ok) throw new Error(`No se pudo cargar ${name}`);
         return res.text();
       })
       .then(html => {
         section.innerHTML = html;
         observer.observe(section);
 
-        // 🔔 Avisamos que esta sección ya está lista
         document.dispatchEvent(
           new CustomEvent("sectionLoaded", {
             detail: name
@@ -38,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
         section.innerHTML = "<p>Error cargando contenido.</p>";
       });
   });
+
 });
