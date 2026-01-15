@@ -30,3 +30,12 @@ document.getElementById('projectsNext')?.addEventListener('click', () => {
     .scrollBy({ left: 320, behavior: 'smooth' });
 });
 
+  const grid = document.getElementById('projectsGrid');
+  const nextBtn = document.getElementById('projectsNext');
+
+  nextBtn.addEventListener('click', () => {
+    grid.scrollBy({
+      left: 320,
+      behavior: 'smooth'
+    });
+  });
