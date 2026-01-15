@@ -584,6 +584,136 @@ margin-bottom:120px;
   margin-bottom: 8px;
 }
 
+/* ================================
+TRANSPARENCIA
+=================================== */
+
+.transparency-section {
+  background: #f9fafb;
+  padding: 80px 20px;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2933;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+.legal-info {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.legal-info p {
+  margin: 6px 0;
+}
+
+.nit {
+  letter-spacing: 1px;
+}
+
+/* GRID DE DOCUMENTOS */
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.document-card {
+  background: #ffffff;
+  padding: 30px 26px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.document-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #111827;
+}
+
+.document-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  flex-grow: 1;
+}
+
+.doc-icon {
+  font-size: 2rem;
+}
+
+/* BOTONES */
+
+.doc-btn {
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.doc-btn:hover {
+  background: #d1d5db;
+}
+
+.doc-btn.primary {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.doc-btn.primary:hover {
+  background: #15803d;
+}
+
+.document-card.highlight {
+  border: 2px solid rgba(22, 163, 74, 0.25);
+}
+
+/* NOTA FINAL */
+
+.transparency-note {
+  max-width: 900px;
+  margin: 60px auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+
 /* ===============================
    DONACIONES FIX
 ================================ */
