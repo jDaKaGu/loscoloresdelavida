@@ -27,5 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
         section.innerHTML = "<p>Error cargando contenido.</p>";
       });
   });
+  .then(html => {
+  sec.innerHTML = html;
+  observer.observe(sec);
+
+  document.dispatchEvent(
+    new CustomEvent("sectionLoaded", {
+      detail: name
+    })
+  );
+});
 
 });
