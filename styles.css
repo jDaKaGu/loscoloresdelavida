@@ -568,6 +568,7 @@ margin-bottom:120px;
   box-shadow: var(--shadow);
   min-width:320px;
   scroll-snap-align:start;
+  flex:0 0 280px;
 }
 
 .project-card img {
@@ -587,14 +588,6 @@ margin-bottom:120px;
 .projects-wrapper {
   position: relative;
   overflow: hidden;
-}
-
-.projects-track {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 20px 10px;
 }
 
 .project-card {
