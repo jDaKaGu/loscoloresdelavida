@@ -382,6 +382,7 @@ section[data-section="about"] .card-container {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   cursor: grab;
+  user-select: none;
 }
 
 @media(max-width:900px){
@@ -576,6 +577,7 @@ margin-bottom:120px;
   min-width:320px;
   scroll-snap-align:start;
   flex:0 0 280px;
+  pointer-events: none;
 }
 
 .project-card img {
@@ -616,7 +618,7 @@ margin-bottom:120px;
 .arrow {
   position: absolute;
   top: 50%;
-  right: -12px;
+  right: -16px;
   transform: translateY(-50%);
   background: #0f3d46;
   color: #fff;
