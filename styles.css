@@ -616,7 +616,7 @@ margin-bottom:120px;
 .arrow {
   position: absolute;
   top: 50%;
-  right: -12;
+  right: -12px;
   transform: translateY(-50%);
   background: #0f3d46;
   color: #fff;
