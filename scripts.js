@@ -25,3 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.getElementById('projectsNext')?.addEventListener('click', () => {
+  document.getElementById('projectsTrack')
+    .scrollBy({ left: 320, behavior: 'smooth' });
+});
+
