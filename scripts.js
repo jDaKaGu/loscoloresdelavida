@@ -1,23 +1,27 @@
+/* =========================================================
+   MENÚ LATERAL
+========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".menu-btn");
   const sideMenu = document.querySelector(".side-menu");
   const closeBtn = document.querySelector(".close-btn");
   const overlay = document.querySelector(".menu-overlay");
-
   const links = document.querySelectorAll(".side-menu a");
 
-  function openMenu() {
+  if (!menuBtn || !sideMenu || !overlay) return;
+
+  const openMenu = () => {
     sideMenu.classList.add("active");
     overlay.classList.add("active");
-  }
+  };
 
-  function closeMenu() {
+  const closeMenu = () => {
     sideMenu.classList.remove("active");
     overlay.classList.remove("active");
-  }
+  };
 
   menuBtn.addEventListener("click", openMenu);
-  closeBtn.addEventListener("click", closeMenu);
+  closeBtn?.addEventListener("click", closeMenu);
   overlay.addEventListener("click", closeMenu);
 
   links.forEach(link => {
@@ -25,78 +29,71 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.getElementById('projectsGrid');
-  const nextBtn = document.getElementById('projectsNext');
 
-  if (!grid || !nextBtn) return;
-
-  // Flecha
-  nextBtn.addEventListener('click', () => {
-    grid.scrollBy({ left: 320, behavior: 'smooth' });
-  });
-
-  // Drag con mouse
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  grid.addEventListener('mousedown', e => {
-    isDown = true;
-    startX = e.pageX - grid.offsetLeft;
-    scrollLeft = grid.scrollLeft;
-  });
-
-  ['mouseleave', 'mouseup'].forEach(evt =>
-    grid.addEventListener(evt, () => isDown = false)
-  );
-
-  grid.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - grid.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    grid.scrollLeft = scrollLeft - walk;
-  });
-});
-
-document.addEventListener("sectionLoaded", (e) => {
+/* =========================================================
+   PROYECTOS — SLIDER HORIZONTAL
+   (se inicializa SOLO cuando la sección se carga)
+========================================================= */
+document.addEventListener("sectionLoaded", e => {
   if (e.detail !== "proyectos") return;
 
-  const grid = document.getElementById("projectsGrid");
+  const slider = document.getElementById("projectsGrid");
   const nextBtn = document.getElementById("projectsNext");
 
-  if (!grid || !nextBtn) return;
+  if (!slider || !nextBtn) {
+    console.warn("Slider de proyectos no encontrado");
+    return;
+  }
 
-  // Flecha
+  /* ---------- Flecha ---------- */
   nextBtn.addEventListener("click", () => {
-    grid.scrollBy({ left: 320, behavior: "smooth" });
+    slider.scrollBy({
+      left: 320,
+      behavior: "smooth"
+    });
   });
 
-  // Drag con mouse
+  /* ---------- Drag con mouse ---------- */
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX = 0;
+  let scrollLeft = 0;
 
-  grid.addEventListener("mousedown", (e) => {
+  slider.style.cursor = "grab";
+
+  slider.addEventListener("mousedown", e => {
     isDown = true;
-    startX = e.pageX - grid.offsetLeft;
-    scrollLeft = grid.scrollLeft;
-    grid.style.cursor = "grabbing";
+    slider.style.cursor = "grabbing";
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
   });
 
-  ["mouseleave", "mouseup"].forEach(evt =>
-    grid.addEventListener(evt, () => {
+  ["mouseleave", "mouseup"].forEach(evt => {
+    slider.addEventListener(evt, () => {
       isDown = false;
-      grid.style.cursor = "grab";
-    })
-  );
+      slider.style.cursor = "grab";
+    });
+  });
 
-  grid.addEventListener("mousemove", (e) => {
+  slider.addEventListener("mousemove", e => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - grid.offsetLeft;
+    const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 1.5;
-    grid.scrollLeft = scrollLeft - walk;
+    slider.scrollLeft = scrollLeft - walk;
   });
+
+  /* ---------- Touch (móvil / tablet) ---------- */
+  let touchStartX = 0;
+  let touchScrollLeft = 0;
+
+  slider.addEventListener("touchstart", e => {
+    touchStartX = e.touches[0].pageX;
+    touchScrollLeft = slider.scrollLeft;
+  }, { passive: true });
+
+  slider.addEventListener("touchmove", e => {
+    const x = e.touches[0].pageX;
+    const walk = (x - touchStartX) * 1.2;
+    slider.scrollLeft = touchScrollLeft - walk;
+  }, { passive: true });
 });
