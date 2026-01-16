@@ -43,3 +43,63 @@ document.addEventListener("sectionLoaded", e => {
     grid.scrollLeft = scrollLeft - (e.pageX - startX);
   });
 });
+
+document.addEventListener("sectionLoaded", e => {
+  if (e.detail !== "proyectos") return;
+
+  const grid = document.querySelector(".projects-grid");
+  const prev = document.getElementById("projectsPrev");
+  const next = document.getElementById("projectsNext");
+
+  if (!grid) {
+    console.error("projects-grid no existe en el DOM");
+    return;
+  }
+
+  /* ==========================
+     DRAG CON MOUSE (DESKTOP)
+  ========================== */
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  grid.addEventListener("mousedown", e => {
+    isDown = true;
+    grid.classList.add("dragging");
+    startX = e.pageX - grid.offsetLeft;
+    scrollLeft = grid.scrollLeft;
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDown = false;
+    grid.classList.remove("dragging");
+  });
+
+  grid.addEventListener("mouseleave", () => {
+    isDown = false;
+    grid.classList.remove("dragging");
+  });
+
+  grid.addEventListener("mousemove", e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - grid.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    grid.scrollLeft = scrollLeft - walk;
+  });
+
+  /* ==========================
+     FLECHAS
+  ========================== */
+
+  const scrollAmount = 320;
+
+  next?.addEventListener("click", () => {
+    grid.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+
+  prev?.addEventListener("click", () => {
+    grid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+});
