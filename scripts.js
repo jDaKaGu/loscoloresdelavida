@@ -1,44 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.querySelector(".menu-btn");
-  const sideMenu = document.querySelector(".side-menu");
-  const closeBtn = document.querySelector(".close-btn");
-  const overlay = document.querySelector(".menu-overlay");
-
-  menuBtn.addEventListener("click", () => {
-    sideMenu.classList.add("active");
-    overlay.classList.add("active");
-  });
-
-  closeBtn.addEventListener("click", closeMenu);
-  overlay.addEventListener("click", closeMenu);
-
-  function closeMenu() {
-    sideMenu.classList.remove("active");
-    overlay.classList.remove("active");
-  }
-});
-
-/* === PROYECTOS (CUANDO YA EXISTEN) === */
 document.addEventListener("sectionLoaded", e => {
   if (e.detail !== "proyectos") return;
 
   const grid = document.getElementById("projectsGrid");
-  const nextBtn = document.getElementById("projectsNext");
+  const next = document.getElementById("projectsNext");
+  const prev = document.getElementById("projectsPrev");
 
-  if (!grid || !nextBtn) {
-    console.warn("Projects grid no encontrado");
+  if (!grid || !next || !prev) {
+    console.error("Carrusel: elementos no encontrados");
     return;
   }
 
-  /* Flecha */
-  nextBtn.addEventListener("click", () => {
+  // Flechas
+  next.onclick = () =>
     grid.scrollBy({ left: 320, behavior: "smooth" });
-  });
 
-  /* Drag mouse */
+  prev.onclick = () =>
+    grid.scrollBy({ left: -320, behavior: "smooth" });
+
+  // Drag desktop
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX, scrollLeft;
 
   grid.style.cursor = "grab";
 
@@ -59,22 +40,6 @@ document.addEventListener("sectionLoaded", e => {
   grid.addEventListener("mousemove", e => {
     if (!isDown) return;
     e.preventDefault();
-    const walk = (e.pageX - startX) * 1.2;
-    grid.scrollLeft = scrollLeft - walk;
-  });
-
-  /* Touch (Android) */
-  let touchStartX = 0;
-  let touchScrollLeft = 0;
-
-  grid.addEventListener("touchstart", e => {
-    touchStartX = e.touches[0].pageX;
-    touchScrollLeft = grid.scrollLeft;
-  });
-
-  grid.addEventListener("touchmove", e => {
-    const x = e.touches[0].pageX;
-    const walk = x - touchStartX;
-    grid.scrollLeft = touchScrollLeft - walk;
+    grid.scrollLeft = scrollLeft - (e.pageX - startX);
   });
 });
