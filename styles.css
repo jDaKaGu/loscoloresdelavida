@@ -371,7 +371,7 @@ section[data-section="about"] .card-container {
 .projects-grid {
   display:flex;
   grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
+  gap:24px;
   max-width:1100px;
   margin:auto;
   overflow-x:auto;
@@ -577,9 +577,9 @@ margin-bottom:120px;
   overflow: hidden;
   box-shadow: var(--shadow);
   min-width:300px;
-  max-width: 300px;
+  max-width: 320px;
   scroll-snap-align:start;
-  flex:0 0 300px;
+  flex:0 0 320px;
   pointer-events: none;
   height: 180px;
   flex-shrink: 0;
