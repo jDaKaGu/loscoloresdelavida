@@ -639,6 +639,7 @@ margin-bottom:120px;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  font-family: system-ui, sans-serif;
 }
 
 .projects-arrow.left {
@@ -656,6 +657,8 @@ margin-bottom:120px;
   content: "›";
   font-size: 26px;
   line-height: 1;
+  display: block;
+  transform: translateY(-1px);
 }
 
 .projects-arrow:hover {
