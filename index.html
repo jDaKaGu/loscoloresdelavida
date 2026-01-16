@@ -13,8 +13,8 @@
               <meta property="og:type" content="website"> 
                 <meta property="og:image" content="assets/colores_logo.svg"> <!-- CSS con versión para evitar caché --> 
                   <link rel="stylesheet" href="styles.css?v=101"> 
-                    <script defer src="scripts.js"></script> 
-                    <script defer src="section-loader.js"></script> 
+                    <script defer src="section-loader.js"></script>
+                    <script defer src="scripts.js"></script>
                     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"> 
                       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet"> 
                         </head> 
@@ -71,59 +71,6 @@
 </main>
 
                             </main> 
-                            <footer data-section="footer"></footer> 
-                            <script> 
-                              /* Menú */ 
-                              const openBtn = document.getElementById('open-menu'); 
-                              const closeBtn = document.getElementById('close-menu'); 
-                              const sideMenu = document.getElementById('side-menu'); 
-                              const overlay = document.getElementById('menu-overlay'); 
-                              openBtn.addEventListener('click', () => 
-                              { sideMenu.classList.add('active'); 
-                              overlay.classList.add('active'); 
-                              }); 
-                              closeBtn.addEventListener('click', () => { 
-                              sideMenu.classList.remove('active'); overlay.classList.remove('active'); 
-                              }); 
-                              overlay.addEventListener('click', () => 
-                              { 
-                              sideMenu.classList.remove('active'); 
-                              overlay.classList.remove('active'); 
-                              }); 
-
-                            const slider = document.getElementById("projectsGrid");
-  const nextBtn = document.getElementById("projectsNext");
-
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    slider.classList.add("active");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-
-  slider.addEventListener("mouseleave", () => {
-    isDown = false;
-  });
-
-  slider.addEventListener("mouseup", () => {
-    isDown = false;
-  });
-
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-
-  nextBtn.addEventListener("click", () => {
-    slider.scrollLeft += 300;
-  });
-                            </script> 
+                            <footer data-section="footer"></footer>
                             </body>
                           </html>
