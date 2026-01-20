@@ -581,12 +581,12 @@ margin-bottom:120px;
   flex: 0 0 320px;      
   max-width: 320px;
   min-width: 320px;
-
+  width: 320px;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
   overflow: hidden;
-
+  height: auto;
   display: flex;
   flex-direction: column;
 }
