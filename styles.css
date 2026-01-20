@@ -595,7 +595,8 @@ margin-bottom:120px;
   width: 100%;
   height: 200px;
   object-fit: cover;
-  object-position: var(--focus, center);
+  object-position: center;
+  display: block;
 }
 
 .project-content {
