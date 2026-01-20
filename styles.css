@@ -577,6 +577,14 @@ margin-bottom:120px;
 /* ===============================
    PROYECTOS
 ================================ */
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;        /* 🔥 ESTO evita el estiramiento */
+  overflow: hidden;
+}
+
 .project-card {
   flex: 0 0 320px;      
   max-width: 320px;
