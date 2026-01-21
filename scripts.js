@@ -1,154 +1,87 @@
-document.addEventListener("sectionLoaded", e => {
-  if (e.detail !== "proyectos") return;
+document.addEventListener("DOMContentLoaded", () => {
 
-  const grid = document.getElementById("projectsGrid");
-  const next = document.getElementById("projectsNext");
-  const prev = document.getElementById("projectsPrev");
-
-  if (!grid || !next || !prev) {
-    console.error("Carrusel: elementos no encontrados");
-    return;
-  }
-
-  // Flechas
-  next.onclick = () =>
-    grid.scrollBy({ left: 320, behavior: "smooth" });
-
-  prev.onclick = () =>
-    grid.scrollBy({ left: -320, behavior: "smooth" });
-
-  // Drag desktop
-  let isDown = false;
-  let startX, scrollLeft;
-
-  grid.style.cursor = "grab";
-
-  grid.addEventListener("mousedown", e => {
-    isDown = true;
-    startX = e.pageX;
-    scrollLeft = grid.scrollLeft;
-    grid.style.cursor = "grabbing";
-  });
-
-  ["mouseup", "mouseleave"].forEach(evt =>
-    grid.addEventListener(evt, () => {
-      isDown = false;
-      grid.style.cursor = "grab";
-    })
-  );
-
-  grid.addEventListener("mousemove", e => {
-    if (!isDown) return;
-    e.preventDefault();
-    grid.scrollLeft = scrollLeft - (e.pageX - startX);
-  });
-});
-
-document.addEventListener("sectionLoaded", e => {
-  if (e.detail !== "proyectos") return;
-
-  const grid = document.querySelector(".projects-grid");
+  const carousel = document.querySelector(".projects-carousel");
+  const track = document.querySelector(".projects-track");
   const prev = document.getElementById("projectsPrev");
   const next = document.getElementById("projectsNext");
 
-  if (!grid) {
-    console.error("projects-grid no existe en el DOM");
+  if (!carousel || !track || !prev || !next) {
+    console.error("Carrusel de proyectos: elementos no encontrados");
     return;
   }
 
   /* ==========================
-     DRAG CON MOUSE (DESKTOP)
+     CONFIGURACIÓN
   ========================== */
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  const cardWidth = track.querySelector(".project-card").offsetWidth + 24;
+  let isDragging = false;
+  let startX = 0;
+  let scrollStart = 0;
 
-  grid.addEventListener("mousedown", e => {
-    isDown = true;
-    grid.classList.add("dragging");
-    startX = e.pageX - grid.offsetLeft;
-    scrollLeft = grid.scrollLeft;
-  });
+  carousel.style.cursor = "grab";
 
-  document.addEventListener("mouseup", () => {
-    isDown = false;
-    grid.classList.remove("dragging");
-  });
+  /* ==========================
+     CLONADO PARA INFINITO
+  ========================== */
 
-  grid.addEventListener("mouseleave", () => {
-    isDown = false;
-    grid.classList.remove("dragging");
-  });
-
-  grid.addEventListener("mousemove", e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - grid.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    grid.scrollLeft = scrollLeft - walk;
-  });
+  track.innerHTML += track.innerHTML;
 
   /* ==========================
      FLECHAS
   ========================== */
 
-  const scrollAmount = 320;
-
-  next?.addEventListener("click", () => {
-    grid.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  next.addEventListener("click", () => {
+    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
   });
 
-  prev?.addEventListener("click", () => {
-    grid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  prev.addEventListener("click", () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
   });
+
+  /* ==========================
+     DRAG (DESKTOP)
+  ========================== */
+
+  carousel.addEventListener("mousedown", e => {
+    isDragging = true;
+    startX = e.pageX;
+    scrollStart = carousel.scrollLeft;
+    carousel.style.cursor = "grabbing";
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    carousel.style.cursor = "grab";
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    isDragging = false;
+    carousel.style.cursor = "grab";
+  });
+
+  carousel.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const walk = e.pageX - startX;
+    carousel.scrollLeft = scrollStart - walk;
+  });
+
+  /* ==========================
+     SCROLL INFINITO
+  ========================== */
+
+  carousel.addEventListener("scroll", () => {
+    const half = track.scrollWidth / 2;
+
+    if (carousel.scrollLeft >= half) {
+      carousel.scrollLeft -= half;
+    }
+
+    if (carousel.scrollLeft <= 0) {
+      carousel.scrollLeft += half;
+    }
+  });
+
 });
 
-const carousel = document.querySelector('.projects-carousel');
-const track = document.getElementById('projectsTrack');
-const prev = document.getElementById('projectsPrev');
-const next = document.getElementById('projectsNext');
-
-
-const cardWidth = 344;
-
-
-/* Flechas */
-next.onclick = () => carousel.scrollBy({ left: cardWidth, behavior:'smooth' });
-prev.onclick = () => carousel.scrollBy({ left: -cardWidth, behavior:'smooth' });
-
-
-/* Drag */
-let isDown = false, startX, scrollLeft;
-
-
-carousel.addEventListener('mousedown', e => {
-isDown = true;
-startX = e.pageX;
-scrollLeft = carousel.scrollLeft;
-carousel.style.cursor='grabbing';
-});
-
-
-window.addEventListener('mouseup', () => {
-isDown=false;
-carousel.style.cursor='grab';
-});
-
-
-carousel.addEventListener('mousemove', e => {
-if(!isDown) return;
-e.preventDefault();
-carousel.scrollLeft = scrollLeft - (e.pageX - startX);
-});
-
-
-/* Infinito */
-track.innerHTML += track.innerHTML;
-
-
-carousel.addEventListener('scroll', () => {
-if(carousel.scrollLeft >= track.scrollWidth / 2){
-carousel.scrollLeft = 0;
-}
-});
