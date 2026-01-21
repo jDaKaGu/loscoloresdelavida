@@ -365,64 +365,7 @@ section[data-section="about"] .card-container {
   grid-column: 1 / -1;
 }
 
-/* ==================================================
-   PROYECTOS
-================================================== */
-.projects-grid {
-  display:flex;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:1100px;
-  margin:auto;
-  overflow-x:auto;
-  overflow-y:hidden;
-  padding-bottom:20px;
-  scroll-snap-type:x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-  user-select: none;
-  padding: 20px 10px;
-  scrollbar-width: none;
-  flex-wrap: nowrap;
-  align-items: stretch;
-  transition: transform 0.4s ease;
-}
-
-.projects-carousel {
-  overflow: hidden;
-  width: 100%;
-}
-
-.projects-track {
-  display: flex;               /* ← ESTO ES LO QUE FALTABA */
-  gap: 1.5rem;
-  transition: transform 0.4s ease;
-  will-change: transform;
-}
-
-.projects-grid.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
-
-@media(max-width:900px){
-  .projects-grid { grid-template-columns:1fr; }
-}
-
-.projects-grid::-webkit-scrollbar {
-  height: 8px;
-  display: none;
-}
-.projects-grid::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-
-.projects-grid:active {
-   cursor: grabbing;
-}
-/* ==================================================
+=================
    VOLUNTARIADO — FINAL
 ================================================== */
 .vol-section {
@@ -588,43 +531,54 @@ margin-bottom:120px;
   color: #fff;
 }
 
-/* ===============================
-   PROYECTOS
-================================ */
+/* ==================================================
+   PROYECTOS — CARRUSEL FUNCIONAL
+================================================== */
 
-.project-image {
-  width: 100%;
-  height: 200px;
-  flex-shrink: 0;  
+.projects-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.projects-carousel {
   overflow: hidden;
+  width: 100%;
 }
 
-.project-image img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+.projects-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
+
+/* ===== TARJETAS ===== */
 
 .project-card {
-  flex: 0 0 320px;      
-  max-width: 320px;
-  min-width: 420px;
+  flex: 0 0 320px;
   width: 320px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
   overflow: hidden;
-  height: auto;
   display: flex;
   flex-direction: column;
 }
 
-.project-card img {
+.project-image {
   width: 100%;
   height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
@@ -633,108 +587,66 @@ margin-bottom:120px;
 }
 
 .project-content h3 {
-  margin-bottom: 12px;
-}
-.projects-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+  margin-bottom: 10px;
 }
 
-/* ventana */
-.projects-viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-
-
-.projects-section {
-  position: relative;
-  max-width: 1100px;
-  margin: auto;
-  padding: 4rem 0;
-}
+/* ===== FLECHAS ===== */
 
 .projects-arrow {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: #0c2d33;
-  color: #fff;
-  font-size: 28px;
+  background: #0b2a35;
   border: none;
   cursor: pointer;
+  flex-shrink: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  z-index: 5;
-}
-
-.projects-arrow.left {
-  left: -24px;
-}
-
-.projects-arrow.right {
-  right: -24px;
-}
-
-#projectsPrev {
-  left: -24px;
-}
-
-#projectsNext {
-  right: -24px;
-}
-
-.projects-arrow.prev {
-  margin-right: 0.5rem;
-}
-
-.projects-arrow.next {
-  margin-left: 0.5rem;
-}
-
-#projectsPrev { left: -24px; }
-#projectsNext { right: -24px; }
-
-.projects-arrow::before {
-  font-size: 26px;
-  line-height: 1;
-}
-
-.projects-arrow.left::before {
-  content: "‹";
-}
-
-.projects-arrow.right::before {
-  content: "›";
+  transition: background 0.25s ease, transform 0.2s ease;
 }
 
 .projects-arrow:hover {
   background: #13606c;
+  transform: scale(1.05);
 }
 
+/* SVG embebido con mask → 100% centrado */
+.projects-arrow::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
 
-/* ==========================
-   MOBILE
-========================== */
+/* Flecha izquierda */
+.projects-arrow.prev::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+}
+
+/* Flecha derecha */
+.projects-arrow.next::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z'/%3E%3C/svg%3E");
+}
+
+/* ===== MOBILE ===== */
+
 @media (max-width: 768px) {
   .projects-arrow {
     display: none;
   }
-}
 
   .project-card {
     flex: 0 0 85%;
-    max-width: 85%;
+    width: 85%;
   }
 }
+
 
 /* ===============================
    VOLUNTARIADO FIX
