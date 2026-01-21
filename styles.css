@@ -560,13 +560,10 @@ margin-bottom:120px;
 }
 
 .projects-carousel {
-  overflow: hidden;
-  width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  scrollbar-widht: none;
-  flex: 1;
-  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .projects-track {
