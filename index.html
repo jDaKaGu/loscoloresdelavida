@@ -72,29 +72,5 @@
 
                             </main> 
                             <footer data-section="footer"></footer>
-               <script>
-  const track = document.querySelector('.projects-track');
-  const prev = document.getElementById('projectsPrev');
-  const next = document.getElementById('projectsNext');
-
-  const gap = 24;
-  const card = track.querySelector('.project-card');
-  const cardWidth = card.offsetWidth + gap;
-
-  let position = 0;
-
-  next.addEventListener('click', () => {
-    const max = track.scrollWidth - track.parentElement.offsetWidth;
-    position = Math.min(position + cardWidth, max);
-    track.style.transform = `translateX(-${position}px)`;
-  });
-
-  prev.addEventListener('click', () => {
-    position = Math.max(position - cardWidth, 0);
-    track.style.transform = `translateX(-${position}px)`;
-  });
-</script>
-
-
                             </body>
                           </html>
