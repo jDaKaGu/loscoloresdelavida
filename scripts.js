@@ -103,3 +103,52 @@ document.addEventListener("sectionLoaded", e => {
     grid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 });
+
+const carousel = document.querySelector('.projects-carousel');
+const track = document.getElementById('projectsTrack');
+const prev = document.getElementById('projectsPrev');
+const next = document.getElementById('projectsNext');
+
+
+const cardWidth = 344;
+
+
+/* Flechas */
+next.onclick = () => carousel.scrollBy({ left: cardWidth, behavior:'smooth' });
+prev.onclick = () => carousel.scrollBy({ left: -cardWidth, behavior:'smooth' });
+
+
+/* Drag */
+let isDown = false, startX, scrollLeft;
+
+
+carousel.addEventListener('mousedown', e => {
+isDown = true;
+startX = e.pageX;
+scrollLeft = carousel.scrollLeft;
+carousel.style.cursor='grabbing';
+});
+
+
+window.addEventListener('mouseup', () => {
+isDown=false;
+carousel.style.cursor='grab';
+});
+
+
+carousel.addEventListener('mousemove', e => {
+if(!isDown) return;
+e.preventDefault();
+carousel.scrollLeft = scrollLeft - (e.pageX - startX);
+});
+
+
+/* Infinito */
+track.innerHTML += track.innerHTML;
+
+
+carousel.addEventListener('scroll', () => {
+if(carousel.scrollLeft >= track.scrollWidth / 2){
+carousel.scrollLeft = 0;
+}
+});
