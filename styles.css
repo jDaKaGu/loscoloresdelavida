@@ -618,7 +618,6 @@ margin-bottom:120px;
   position: relative;
   width: 100%;
   max-width: 1200px;
-  margin-top: 2rem;
   margin: 0 auto;
 }
 
@@ -632,7 +631,7 @@ margin-bottom:120px;
 .projects-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  translate: 0 -50%;
 
   width: 48px;
   height: 48px;
@@ -641,17 +640,18 @@ margin-bottom:120px;
   border: none;
 
   background: #0b2a35;
-  color: #fff;
-
-  font-size: 28px;
-  line-height: 1;
+  color: #ffffff;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+
   cursor: pointer;
-  z-index: 5;
+  z-index: 10;
 }
 
 .projects-arrow.left {
@@ -685,9 +685,10 @@ margin-bottom:120px;
   background: #13606c;
 }
 
+/* Ocultar flechas en móvil (drag táctil) */
 @media (max-width: 768px) {
-  .arrow {
-    display: none; /* en móvil se usa el dedo */
+  .projects-arrow {
+    display: none;
   }
 }
 
