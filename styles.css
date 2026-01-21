@@ -387,6 +387,18 @@ section[data-section="about"] .card-container {
   flex-wrap: nowrap; 
 }
 
+.projects-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;               /* ← ESTO ES LO QUE FALTABA */
+  gap: 1.5rem;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
 .projects-grid.dragging {
   cursor: grabbing;
   user-select: none;
@@ -591,7 +603,7 @@ margin-bottom:120px;
   min-width: 320px;
   width: 320px;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
   overflow: hidden;
   height: auto;
