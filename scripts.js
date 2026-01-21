@@ -6,82 +6,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const next = document.getElementById("projectsNext");
 
   if (!carousel || !track || !prev || !next) {
-    console.error("Carrusel de proyectos: elementos no encontrados");
+    console.error("Carrusel: estructura no encontrada");
     return;
   }
 
-  /* ==========================
-     CONFIGURACIÓN
-  ========================== */
+  /* ===============================
+     SCROLL CON FLECHAS
+  =============================== */
 
-  const cardWidth = track.querySelector(".project-card").offsetWidth + 24;
-  let isDragging = false;
-  let startX = 0;
-  let scrollStart = 0;
-
-  carousel.style.cursor = "grab";
-
-  /* ==========================
-     CLONADO PARA INFINITO
-  ========================== */
-
-  track.innerHTML += track.innerHTML;
-
-  /* ==========================
-     FLECHAS
-  ========================== */
+  const card = track.querySelector(".project-card");
+  const gap = 24;
+  const scrollAmount = card.offsetWidth + gap;
 
   next.addEventListener("click", () => {
-    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 
   prev.addEventListener("click", () => {
-    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   });
 
-  /* ==========================
+  /* ===============================
      DRAG (DESKTOP)
-  ========================== */
+  =============================== */
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carousel.style.cursor = "grab";
 
   carousel.addEventListener("mousedown", e => {
-    isDragging = true;
+    isDown = true;
     startX = e.pageX;
-    scrollStart = carousel.scrollLeft;
+    scrollLeft = carousel.scrollLeft;
     carousel.style.cursor = "grabbing";
   });
 
   window.addEventListener("mouseup", () => {
-    isDragging = false;
+    isDown = false;
     carousel.style.cursor = "grab";
   });
 
   carousel.addEventListener("mouseleave", () => {
-    isDragging = false;
+    isDown = false;
     carousel.style.cursor = "grab";
   });
 
   carousel.addEventListener("mousemove", e => {
-    if (!isDragging) return;
+    if (!isDown) return;
     e.preventDefault();
     const walk = e.pageX - startX;
-    carousel.scrollLeft = scrollStart - walk;
-  });
-
-  /* ==========================
-     SCROLL INFINITO
-  ========================== */
-
-  carousel.addEventListener("scroll", () => {
-    const half = track.scrollWidth / 2;
-
-    if (carousel.scrollLeft >= half) {
-      carousel.scrollLeft -= half;
-    }
-
-    if (carousel.scrollLeft <= 0) {
-      carousel.scrollLeft += half;
-    }
+    carousel.scrollLeft = scrollLeft - walk;
   });
 
 });
-
