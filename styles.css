@@ -557,6 +557,7 @@ margin-bottom:120px;
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 48px;
 }
 
 .projects-carousel {
@@ -564,6 +565,13 @@ margin-bottom:120px;
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+
+.projects-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .projects-track {
@@ -572,7 +580,7 @@ margin-bottom:120px;
   transition: transform 0.4s ease;
   will-change: transform;
   width: max-content;
-  padding: 10px 4px;
+  padding: 12px 4px;
 }
 
 .projects-carousel::-webkit-scrollbar{
@@ -584,14 +592,20 @@ display:none;
 .project-card {
   flex: 0 0 320px;
   width: 320px;
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  transiton: transform 0.3s ease, box-shadow 0.3 ease;
 }
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+}   
 
 .project-image {
   width: 100%;
@@ -613,34 +627,44 @@ display:none;
 .project-content h3 {
   margin: 0 0 10px;
   font-size: 20px;
+  color: #0b2a35;
 }
 
-.project-content p{
+.project-content p { 
 color:#555;
 font-size:15px;
+margin: 0;
 }
 
 /* ===== FLECHAS ===== */
 
 .projects-arrow{
+position: absolute;
+top: 50%;
+transform: translateY(-50%)
 width:52px;
 height:52px;
 border-radius:50%;
 border:none;
-background:#fff;
+background: rgba(255,255,255,0.9);
 box-shadow:0 6px 20px rgba(0,0,0,.18);
 display:flex;
 align-items:center;
 justify-content:center;
 cursor:pointer;
-transition:transform .25s ease, box-shadow .25s ease;
+transition:all 0.25s ease;
 flex-shrink:0;
+z-index: 10;
 }
 
 .projects-arrow:hover{
-transform:scale(1.08);
+transform:translateY(-50%) scale(1.08);
 box-shadow:0 10px 26px rgba(0,0,0,.25);
+background: #ffffff;
 }
+
+#projectsPrev { left: -24px; }
+#projectsNext { right: -24px; }
 
 /* SVG embebido con mask → 100% centrado */
 .projects-arrow::before {
@@ -654,14 +678,14 @@ box-shadow:0 10px 26px rgba(0,0,0,.25);
 }
 
 /* SVG */
-.projects-arrow svg{
-width:22px;
-height:22px;
-stroke:#333;
-stroke-width:2.6;
-fill:none;
-stroke-linecap:round;
-stroke-linejoin:round;
+.projects-arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke: #0b2a35;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Flecha izquierda */
