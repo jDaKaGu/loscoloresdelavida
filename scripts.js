@@ -1,7 +1,3 @@
-/* =====================================================
-   CARRUSEL DE PROYECTOS (AJAX / section-loader)
-===================================================== */
-
 document.addEventListener("sectionLoaded", e => {
   if (e.detail !== "proyectos") return;
 
@@ -10,26 +6,38 @@ document.addEventListener("sectionLoaded", e => {
   const prev = document.getElementById("projectsPrev");
   const next = document.getElementById("projectsNext");
 
-  if (!carousel || !track || !prev || !next) {
-    console.error("Carrusel: elementos no encontrados");
+  if (!carousel || !track) {
+    console.error("Carrusel de proyectos no encontrado");
     return;
   }
 
-  /* ================= FLECHAS ================= */
+  /* ===============================
+     CONFIGURACIÓN
+  ================================ */
 
-  const card = track.querySelector(".project-card");
   const gap = 24;
+  const card = track.querySelector(".project-card");
   const cardWidth = card.offsetWidth + gap;
+  let autoScrollInterval;
+  let isInteracting = false;
 
-  next.addEventListener("click", () => {
+  /* ===============================
+     FLECHAS
+  ================================ */
+
+  next?.addEventListener("click", () => {
+    pauseAutoScroll();
     carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
   });
 
-  prev.addEventListener("click", () => {
+  prev?.addEventListener("click", () => {
+    pauseAutoScroll();
     carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
   });
 
-  /* ================= DRAG ================= */
+  /* ===============================
+     DRAG DESKTOP
+  ================================ */
 
   let isDown = false;
   let startX;
@@ -39,6 +47,8 @@ document.addEventListener("sectionLoaded", e => {
 
   carousel.addEventListener("mousedown", e => {
     isDown = true;
+    isInteracting = true;
+    pauseAutoScroll();
     startX = e.pageX;
     scrollLeft = carousel.scrollLeft;
     carousel.style.cursor = "grabbing";
@@ -47,6 +57,7 @@ document.addEventListener("sectionLoaded", e => {
   window.addEventListener("mouseup", () => {
     isDown = false;
     carousel.style.cursor = "grab";
+    resumeAutoScroll();
   });
 
   carousel.addEventListener("mousemove", e => {
@@ -55,14 +66,47 @@ document.addEventListener("sectionLoaded", e => {
     carousel.scrollLeft = scrollLeft - (e.pageX - startX);
   });
 
-  /* ================= INFINITO ================= */
+  /* ===============================
+     TOUCH / MÓVIL
+  ================================ */
 
-  track.innerHTML += track.innerHTML;
-
-  carousel.addEventListener("scroll", () => {
-    if (carousel.scrollLeft >= track.scrollWidth / 2) {
-      carousel.scrollLeft = 0;
-    }
+  carousel.addEventListener("touchstart", () => {
+    isInteracting = true;
+    pauseAutoScroll();
   });
-});
 
+  carousel.addEventListener("touchend", () => {
+    resumeAutoScroll();
+  });
+
+  /* ===============================
+     AUTOSCROLL
+  ================================ */
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (isInteracting) return;
+
+      const maxScroll =
+        carousel.scrollWidth - carousel.clientWidth;
+
+      if (carousel.scrollLeft >= maxScroll - 5) {
+        carousel.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+      }
+    }, 4000);
+  }
+
+  function pauseAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  function resumeAutoScroll() {
+    isInteracting = false;
+    pauseAutoScroll();
+    startAutoScroll();
+  }
+
+  startAutoScroll();
+});
