@@ -656,11 +656,17 @@ margin: 0;
   cursor: pointer;
   z-index: 10;
   transition: background 0.25s ease, transform 0.25s ease;
+  opacity: 0.35;
+}
+
+.projects-wrapper:hover .projects-arrow {
+  opacity: 0.85;
 }
 
 .projects-arrow:hover {
   background: rgba(255,255,255,0.95);
   transform: translateY(-50%) scale(1.1);
+  opacity: 1;
 }
 
 #projectsPrev { left: -22px; }
