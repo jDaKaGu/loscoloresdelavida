@@ -6,20 +6,40 @@ document.addEventListener("sectionLoaded", e => {
   const prev = document.getElementById("projectsPrev");
   const next = document.getElementById("projectsNext");
 
-  if (!carousel || !track) {
-    console.error("Carrusel de proyectos no encontrado");
-    return;
-  }
+  if (!carousel || !track) return;
 
   /* ===============================
-     CONFIGURACIÓN
+     CONFIG
   ================================ */
 
   const gap = 24;
   const card = track.querySelector(".project-card");
   const cardWidth = card.offsetWidth + gap;
-  let autoScrollInterval;
+  let autoScrollTimer;
   let isInteracting = false;
+
+  /* ===============================
+     INFINITO (CLONADO)
+  ================================ */
+
+  track.innerHTML += track.innerHTML;
+
+  // esperar a que el DOM pinte
+  requestAnimationFrame(() => {
+    carousel.scrollLeft = track.scrollWidth / 2;
+  });
+
+  function normalizeScroll() {
+    const half = track.scrollWidth / 2;
+
+    if (carousel.scrollLeft <= 0) {
+      carousel.scrollLeft += half;
+    } else if (carousel.scrollLeft >= half * 2) {
+      carousel.scrollLeft -= half;
+    }
+  }
+
+  carousel.addEventListener("scroll", normalizeScroll);
 
   /* ===============================
      FLECHAS
@@ -40,8 +60,7 @@ document.addEventListener("sectionLoaded", e => {
   ================================ */
 
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX, scrollStart;
 
   carousel.style.cursor = "grab";
 
@@ -50,11 +69,12 @@ document.addEventListener("sectionLoaded", e => {
     isInteracting = true;
     pauseAutoScroll();
     startX = e.pageX;
-    scrollLeft = carousel.scrollLeft;
+    scrollStart = carousel.scrollLeft;
     carousel.style.cursor = "grabbing";
   });
 
   window.addEventListener("mouseup", () => {
+    if (!isDown) return;
     isDown = false;
     carousel.style.cursor = "grab";
     resumeAutoScroll();
@@ -63,7 +83,7 @@ document.addEventListener("sectionLoaded", e => {
   carousel.addEventListener("mousemove", e => {
     if (!isDown) return;
     e.preventDefault();
-    carousel.scrollLeft = scrollLeft - (e.pageX - startX);
+    carousel.scrollLeft = scrollStart - (e.pageX - startX);
   });
 
   /* ===============================
@@ -84,22 +104,14 @@ document.addEventListener("sectionLoaded", e => {
   ================================ */
 
   function startAutoScroll() {
-    autoScrollInterval = setInterval(() => {
+    autoScrollTimer = setInterval(() => {
       if (isInteracting) return;
-
-      const maxScroll =
-        carousel.scrollWidth - carousel.clientWidth;
-
-      if (carousel.scrollLeft >= maxScroll - 5) {
-        carousel.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
+      carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
     }, 4000);
   }
 
   function pauseAutoScroll() {
-    clearInterval(autoScrollInterval);
+    clearInterval(autoScrollTimer);
   }
 
   function resumeAutoScroll() {
