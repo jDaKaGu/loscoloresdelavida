@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: TU-USUARIO/TU-REPO
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "sections"
+    label: "Secciones"
+    files:
+      - file: "sections/hero.html"
+        label: "Inicio (Hero)"
+        name: "hero"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
+
+      - file: "sections/about.html"
+        label: "Quiénes Somos"
+        name: "about"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
+
+      - file: "sections/proyectos.html"
+        label: "Proyectos"
+        name: "proyectos"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
+
+      - file: "sections/voluntariado.html"
+        label: "Voluntariado"
+        name: "voluntariado"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
+
+      - file: "sections/donaciones.html"
+        label: "Donaciones"
+        name: "donaciones"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
+
+      - file: "sections/transparencia.html"
+        label: "Transparencia"
+        name: "transparencia"
+        fields:
+          - { label: "Contenido", name: "body", widget: "text" }
