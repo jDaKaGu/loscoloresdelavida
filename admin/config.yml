@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU-USUARIO_REAL/TU_REPO_REAL
+  repo: jDaKaGu/loscoloresdelavida
   branch: main
   auth_type: implicit
   app_id: Ov23liru80FLwIEilEBf
