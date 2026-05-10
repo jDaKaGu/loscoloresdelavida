@@ -3,7 +3,7 @@ backend:
   repo: TU-USUARIO_REAL/TU_REPO_REAL
   branch: main
   auth_type: implicit
-  app_id: TU_CLIENT_ID_REAL
+  app_id: Ov23liru80FLwIEilEBf
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
