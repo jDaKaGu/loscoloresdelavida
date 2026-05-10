@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: TU-USUARIO/TU-REPO
+  repo: TU-USUARIO_REAL/TU_REPO_REAL
   branch: main
+  auth_type: implicit
+  app_id: TU_CLIENT_ID_REAL
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
@@ -45,10 +47,3 @@ collections:
         name: "transparencia"
         fields:
           - { label: "Contenido", name: "body", widget: "text" }
-
-backend:
-  name: github
-  repo: TU-USUARIO/TU-REPO
-  branch: main
-  auth_type: implicit
-  app_id: TU_GITHUB_APP_ID
